@@ -37,13 +37,13 @@
             bindings = <&kp BSPC>, <&kp LC(BSPC)>;
         };
         // Sensor rotation:
-        // scroll_x: sensor_rotation_scroll_x {
-        //     compatible = "zmk,behavior-sensor-rotation";
-        //     binding = <&kp LEFT_ARROW>, <&kp RIGHT_ARROW>;
-        //  };
-        // scroll_y: sensor_rotation_scroll_y {
-        //     compatible = "zmk,behavior-sensor-rotation";
-        //     binding = <&kp UP_ARROW>, <&kp DOWN_ARROW>;
+        a_scroll_y: sensor_arrow_scroll_y {
+            compatible = "zmk,behavior-sensor-rotation";
+            binding = <&kp LEFT_ARROW>, <&kp RIGHT_ARROW>;
+         };
+        a_scroll_x: sensor_arrow_scroll_x {
+            compatible = "zmk,behavior-sensor-rotation";
+            binding = <&kp UP_ARROW>, <&kp DOWN_ARROW>;
         // };
         // mouse_x: sensor_rotate_x {
         //     compatible = "zmk,behavior-sensor-rotate-var";
@@ -55,12 +55,12 @@
         //     #sensor-binding-cells = <2>;
         //     bindings = <&mmv MOVE_LEFT &mmv MOVE_RIGHT>;
         //  };
-        mouse_y: sensor_mouse_x {
+        mouse_x: sensor_mouse_x {
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
             bindings = <&mmv MOVE_UP>, <&mmv MOVE_DOWN>;
         };
-        mouse_x: sensor_mouse_y {
+        mouse_y: sensor_mouse_y {
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
             bindings = <&mmv MOVE_LEFT>, <&mmv MOVE_RIGHT>;
@@ -99,7 +99,7 @@
                         &trans  &trans      &trans       &trans    &trans   &trans    &trans    &trans    &trans    &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_UP PG_DN>;
+            sensor-bindings = <&a_scroll_y &a_scroll_x>;
         };
 
         navigation_layer { //Layer2
@@ -118,10 +118,10 @@
 //         numpad_layer { //Layer3
 //             bindings = <
 
-// &to 0     &trans &trans &trans  &trans  &trans                       &trans      &trans     &trans     &trans      &trans    &trans
-// &trans    &trans &trans &trans  &trans  &trans                       &trans      &kp KP_N7  &kp KP_N8  &kp KP_N9   &trans    &trans
-// &trans    &trans &trans &trans  &trans  &trans                       &trans      &kp KP_N4  &kp KP_N5  &kp KP_N6   &trans    &trans
-// &trans    &trans &trans &trans  &trans  &trans    &trans   &trans    &trans      &kp KP_N1  &kp KP_N2  &kp KP_N3   &trans    &trans
+// &to 0     &trans &trans &trans  &trans  &trans                       &kp KP_NLCK &kp DEL    &kp FSLH   &kp STAR    &kp MINUS   &trans
+// &trans    &trans &trans &trans  &trans  &trans                       &kp PG_UP   &kp KP_N7  &kp KP_N8  &kp KP_N9   &kp PLUS    &trans
+// &trans    &trans &trans &trans  &trans  &trans                       &kp PG_DN   &kp KP_N4  &kp KP_N5  &kp KP_N6   &kp RET     &trans
+// &trans    &trans &trans &trans  &trans  &trans    &trans   &trans    &trans      &kp KP_N1  &kp KP_N2  &kp KP_N3   &trans      &trans
 //                  &trans &trans  &trans  &trans    &trans   &trans    &trans      &kp KP_N0  &trans     &trans
 //             >;
 
