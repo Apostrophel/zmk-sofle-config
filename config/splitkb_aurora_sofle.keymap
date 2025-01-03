@@ -186,13 +186,13 @@
 
 &to 0     &trans &trans   &trans   &trans     &trans                         &trans      &trans    &mkp MCLK &trans         &trans           &trans
 &trans    &trans &trans   &kp UP   &trans     &trans                         &trans      &mkp LCLK &kp UP    &mkp RCLK      &trans           &trans
-&trans    &trans &kp LEFT &kp DOWN &kp RIGHT  &trans                         &trans      &kp LEFT  &kp DOWN  &kp RIGHT      &mmv MOVE_UP     &trans
-&trans    &trans &trans   &trans   &trans     &trans    &mkp LCLK &mkp RCLK  &trans      &trans    &trans    &trans         &mmv MOVE_DOWN   &mmv MOVE_RIGHT
-                 &trans   &trans   &trans     &trans    &trans    &trans     &trans      &trans    &trans    &mmv MOVE_LEFT
+&trans    &trans &kp LEFT &kp DOWN &kp RIGHT  &trans                         &trans      &kp LEFT  &kp DOWN  &kp RIGHT      &trans           &trans
+&trans    &trans &trans   &trans   &trans     &trans    &mkp LCLK &mkp RCLK  &trans      &trans    &trans    &trans         &trans           &trans
+                 &trans   &trans   &trans     &trans    &trans    &trans     &trans      &trans    &trans    &trans
              >;
 
             sensor-bindings = <&inc_dec_mmv MOVE_UP MOVE_DOWN &inc_dec_mmv MOVE_LEFT MOVE_RIGHT>;
-             
+            
         };
 
 //         numpad_layer { //Layer3
