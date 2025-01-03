@@ -62,11 +62,11 @@
         symbols_layer { //Layer1
             bindings = <
 
-&to 0      &kp F1           &kp F2            &kp F3            &kp F4       &kp F5                       &kp F6    &kp F7    &kp F8    &kp F9    &kp F10   &kp F11   
-&kp PIPE   &kp EXCL         &kp DQT           &kp HASH          &kp DOLLAR   &kp PRCNT                    &kp AMPS  &kp CARET &kp QMARK &kp SQT   &trans    &kp F12
-&trans     &kp TILDE        &kp LT            &kp LBRC          &kp LPAR     &kp LBKT                     &kp RBKT  &kp RPAR  &kp RBRC  &kp GT    &kp RPAR  &trans
-&trans     &trans           &trans            &trans            &kp MINUS    &kp BSLH  &trans   &trans    &kp FSLH  &kp PLUS  &kp STAR  &trans    &trans  &trans
-                            &trans            &trans            &trans       &trans    &trans   &trans    &trans    &trans    &trans    &trans
+&to 0      &kp F1       &kp F2  &kp F3      &kp F4       &kp F5                       &kp F6    &kp F7    &kp F8    &kp F9    &kp F10   &kp F11   
+&kp PIPE   &kp EXCL     &kp DQT &kp HASH    &kp DOLLAR   &kp PRCNT                    &kp AMPS  &kp CARET &kp QMARK &kp SQT   &trans    &kp F12
+&trans     &kp TILDE    &kp LT  &kp LBRC    &kp LPAR     &kp LBKT                     &kp RBKT  &kp RPAR  &kp RBRC  &kp GT    &kp EQUAL &kp INS
+&trans     &trans       &trans  &trans      &kp MINUS    &kp BSLH  &trans   &trans    &kp FSLH  &kp PLUS  &kp STAR  &trans    &trans    &kp PSCRN
+                        &trans  &trans      &trans       &trans    &trans   &trans    &trans    &trans    &trans    &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
