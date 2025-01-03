@@ -191,7 +191,7 @@
                  &trans   &trans   &trans     &trans    &trans    &trans     &trans      &trans    &trans    &trans
              >;
 
-            sensor-bindings = <&inc_dec_mmv MOVE_UP MOVE_DOWN &inc_dec_mmv MOVE_LEFT MOVE_RIGHT>;
+            sensor-bindings = <&inc_dec_mmv MOVE_UP MOVE_DOWN>, <&inc_dec_mmv MOVE_LEFT MOVE_RIGHT>;
             
         };
 
