@@ -45,21 +45,26 @@
         //     compatible = "zmk,behavior-sensor-rotation";
         //     binding = <&kp UP_ARROW>, <&kp DOWN_ARROW>;
         // };
-        mouse_x: sensor_rotate_x {
-            compatible = "zmk,behavior-sensor-rotate-var";
-            #sensor-binding-cells = <2>;
-            bindings = <&mmv MOVE_UP &mmv MOVE_DOWN>;
-         };
-        mouse_y: sensor_rotate_y {
-            compatible = "zmk,behavior-sensor-rotate-var";
-            #sensor-binding-cells = <2>;
-            bindings = <&mmv MOVE_LEFT &mmv MOVE_RIGHT>;
-         };
-        // mousey: sensor_rotate_kp {
-        //     compatible = "zmk,behavior-sensor-rotate";
-        //     #sensor-binding-cells = <0>;
-        //     bindings = <&mmv MOVE_LEFT>, <&mmv MOVE_RIGHT>;
-        // };
+        // mouse_x: sensor_rotate_x {
+        //     compatible = "zmk,behavior-sensor-rotate-var";
+        //     #sensor-binding-cells = <2>;
+        //     bindings = <&mmv MOVE_UP &mmv MOVE_DOWN>;
+        //  };
+        // mouse_y: sensor_rotate_y {
+        //     compatible = "zmk,behavior-sensor-rotate-var";
+        //     #sensor-binding-cells = <2>;
+        //     bindings = <&mmv MOVE_LEFT &mmv MOVE_RIGHT>;
+        //  };
+        mouse_y: sensor_mouse_x {
+            compatible = "zmk,behavior-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            bindings = <&mmv MOVE_UP>, <&mmv MOVE_DOWN>;
+        };
+        mouse_x: sensor_mouse_y {
+            compatible = "zmk,behavior-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            bindings = <&mmv MOVE_LEFT>, <&mmv MOVE_RIGHT>;
+        };
     };
     keymap {
         compatible = "zmk,keymap";
@@ -109,6 +114,22 @@
 
             sensor-bindings = <&mouse_y &mouse_x>;
         };
+
+//         numpad_layer { //Layer3
+//             bindings = <
+
+// &to 0     &trans &trans &trans  &trans  &trans                       &trans      &trans    &trans    &trans   &trans    &trans
+// &trans    &trans &trans &trans  &trans  &trans                       &trans      &trans    &trans    &trans   &trans    &trans
+// &trans    &trans &trans &trans  &trans  &trans                       &trans      &trans    &trans    &trans   &trans    &trans
+// &trans    &trans &trans &trans  &trans  &trans    &trans   &trans    &trans      &trans    &trans    &trans   &trans    &trans
+//                  &trans &trans  &trans  &trans    &trans   &trans    &trans      &trans    &trans    &trans
+//             >;
+
+//             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_UP PG_DN>;
+//         };
+
+
+
 //         blue_layer { //Layer5
 //             bindings = <
 
