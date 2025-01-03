@@ -38,23 +38,23 @@
         };
         // Sensor rotation:
         a_scroll_y: sensor_arrow_scroll_y {
-            compatible = "zmk,behavior-sensor-rotation";
+            compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
             bindings = <&kp LEFT_ARROW>, <&kp RIGHT_ARROW>;
         };
         a_scroll_x: sensor_arrow_scroll_x {
-            compatible = "zmk,behavior-sensor-rotation";
+            compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
             bindings = <&kp UP_ARROW>, <&kp DOWN_ARROW>;
         };
 
         // mouse_scroll_x: sensor_mouse_scroll_x {
-        //     compatible = "zmk,behavior-sensor-rotation";
+        //     compatible = "zmk,behavior-sensor-rotate";
         //     #sensor-binding-cells = <0>;
         //     bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
         // };        
         // mouse_scroll_y: sensor_mouse_scroll_y {
-        //     compatible = "zmk,behavior-sensor-rotation";
+        //     compatible = "zmk,behavior-sensor-rotate";
         //     #sensor-binding-cells = <0>;     
         //     bindings = <&msc SCRL_LEFT>, <&msc SCRL_RIGHT>;
         // };
