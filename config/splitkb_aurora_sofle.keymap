@@ -76,7 +76,7 @@
         //     compatible = "zmk,behavior-sensor-rotate";
         //     #sensor-binding-cells = <0>;
         //     bindings = <&mmv MOVE_UP>, <&mmv MOVE_DOWN>;
-        };
+        // };
         // mouse_scroll_y: sensor_mouse_scroll_y {
         //     compatible = "zmk,behavior-sensor-rotate-var";
         //     #sensor-binding-cells = <2>;     
@@ -176,7 +176,7 @@
 // &trans    &trans &trans &trans  &trans  &trans                       &trans      &trans    &trans    &trans   &trans    &to 0
 // &trans    &kp Å  &kp ,  &kp .   &kp P   &kp Y                        &kp F       &kp G     &kp C     &kp R    &kp L     &trans
 // &trans    &kp A  &kp O  &kp I   &kp U   &kp I                        &kp D       &kp H     &kp T     &kp N    &kp S     &trans
-// &trans    &kp Ø  &kp Æ  &kp Q   &kp J   &kp K     &trans   &trans    &kp U       &kp U     &kp U     &kp U    &trans    &trans
+// &trans    &kp Ø  &kp Æ  &kp Q   &kp J   &kp K     &trans   &trans    &kp X       &kp B     &kp M     &kp W    &kp V     &kp Z
 //                  &trans &trans  &trans  &trans    &trans   &trans    &trans      &trans    &trans    &trans
 //             >;
 //
