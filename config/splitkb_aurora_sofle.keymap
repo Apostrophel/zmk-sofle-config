@@ -48,12 +48,12 @@
             bindings = <&kp UP_ARROW>, <&kp DOWN_ARROW>;
         };
         mouse_scroll_x: sensor_mouse_scroll_x {
-            compatible = "zmk,behavior-sensor-rotate";
+            compatible = "zmk,behavior-sensor-rotate", "zmk,behavior-input-two-axis";
             #sensor-binding-cells = <0>;
             bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
         };        
         mouse_scroll_y: sensor_mouse_scroll_y {
-            compatible = "zmk,behavior-sensor-rotate";
+            compatible = "zmk,behavior-sensor-rotate", "zmk,behavior-input-two-axis";
             #sensor-binding-cells = <0>;     
             bindings = <&msc SCRL_LEFT>, <&msc SCRL_RIGHT>;
         };
@@ -69,12 +69,12 @@
         //     bindings = <&mmv MOVE_LEFT &mmv MOVE_RIGHT>;
         //  };
         mouse_x: sensor_mouse_x {
-            compatible = "zmk,behavior-sensor-rotate";
+            compatible = "zmk,behavior-sensor-rotate", "zmk,behavior-input-two-axis";
             #sensor-binding-cells = <0>;
             bindings = <&mmv MOVE_UP>, <&mmv MOVE_DOWN>;
         };
         mouse_y: sensor_mouse_y {
-            compatible = "zmk,behavior-sensor-rotate";
+            compatible = "zmk,behavior-sensor-rotate", "zmk,behavior-input-two-axis";
             #sensor-binding-cells = <0>;
             bindings = <&mmv MOVE_LEFT>, <&mmv MOVE_RIGHT>;
         };
@@ -99,7 +99,7 @@
                        &kp LGUI  &kp LALT &mo 2    &mo 1  &dbbs      &kp SPACE  &lt 1 RET   &mo 2    &kp RALT  &kp RGUI
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_UP PG_DN>;
+            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &mouse_scroll_x >; //&inc_dec_kp PG_UP PG_DN>
         };
 
         symbols_layer { //Layer1
@@ -125,7 +125,7 @@
                  &trans   &trans   &trans     &trans    &trans    &trans     &trans      &trans    &trans    &mmv MOVE_LEFT
              >;
 
-            sensor-bindings = <&mouse_scroll_y &mouse_scroll_x>;
+            sensor-bindings = <&mouse_y &mouse_x>;
         };
 
 //         numpad_layer { //Layer3
