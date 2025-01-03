@@ -47,16 +47,29 @@
             #sensor-binding-cells = <0>;
             bindings = <&kp UP_ARROW>, <&kp DOWN_ARROW>;
         };
+
+        msc_up: mouse_scroll_up {
+            compatible = "zmk,behavior-input-two-axis";
+            #binding-cells = <0>;
+            bindings = <&msc SCRL_UP>;
+        };
+        msc_dn: mouse_scroll_dn {
+            compatible = "zmk,behavior-input-two-axis";
+            #binding-cells = <0>;
+            bindings = <&msc SCRL_DOWN>;
+        };
+
         mouse_scroll_x: sensor_mouse_scroll_x {
             compatible = "zmk,behavior-sensor-rotate-var";
             #sensor-binding-cells = <2>;
-            bindings = <&msc SCRL_UP &msc SCRL_DOWN>;
+            bindings = <&msc_up &msc_dn>;
         };        
-        mouse_scroll_y: sensor_mouse_scroll_y {
-            compatible = "zmk,behavior-sensor-rotate-var";
-            #sensor-binding-cells = <2>;     
-            bindings = <&msc SCRL_LEFT &msc SCRL_RIGHT>;
-        };
+
+        // mouse_scroll_y: sensor_mouse_scroll_y {
+        //     compatible = "zmk,behavior-sensor-rotate-var";
+        //     #sensor-binding-cells = <2>;     
+        //     bindings = <&msc SCRL_LEFT &msc SCRL_RIGHT>;
+        // };
         
         
         // mouse_x: sensor_rotate_x {
@@ -128,7 +141,7 @@
                  &trans   &trans   &trans     &trans    &trans    &trans     &trans      &trans    &trans    &mmv MOVE_LEFT
              >;
 
-            sensor-bindings = <&mouse_scroll_y &mouse_scroll_x>;
+            sensor-bindings = <&mouse_scroll_x &mouse_scroll_x>;
         };
 
 //         numpad_layer { //Layer3
@@ -148,9 +161,9 @@
 //             bindings = <
 //
 // &trans    &trans &trans &trans  &trans  &trans                       &trans      &trans    &trans    &trans   &trans    &to 0
-// &trans    &kp U  &kp U  &kp U   &kp U   &kp U                        &kp U       &kp U     &kp U     &kp U    &trans    &trans
-// &trans    &kp U  &kp U  &kp U   &kp U   &kp U                        &kp U       &kp U     &kp U     &kp U    &trans    &trans
-// &trans    &kp U  &kp U  &kp U   &kp U   &kp U     &trans   &trans    &kp U       &kp U     &kp U     &kp U    &trans    &trans
+// &trans    &kp Å  &kp ,  &kp .   &kp P   &kp Y                        &kp F       &kp G     &kp C     &kp R    &kp L     &trans
+// &trans    &kp A  &kp O  &kp I   &kp U   &kp I                        &kp D       &kp H     &kp T     &kp N    &kp S     &trans
+// &trans    &kp Ø  &kp Æ  &kp Q   &kp J   &kp K     &trans   &trans    &kp U       &kp U     &kp U     &kp U    &trans    &trans
 //                  &trans &trans  &trans  &trans    &trans   &trans    &trans      &trans    &trans    &trans
 //             >;
 //
