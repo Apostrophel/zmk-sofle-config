@@ -13,8 +13,8 @@
 #include <dt-bindings/zmk/ext_power.h>
 
 
-#define ZMK_POINTING_DEFAULT_MOVE_VAL 2000  // default: 600
-#define ZMK_POINTING_DEFAULT_SCRL_VAL 10    // default: 10
+#define ZMK_POINTING_DEFAULT_MOVE_VAL 5000  // default: 600
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 10    // default: 140
 
 
 #include <dt-bindings/zmk/pointing.h>
@@ -133,22 +133,21 @@
                  &trans   &trans   &trans     &trans    &trans    &trans     &trans      &trans    &trans    &trans
              >;
 
-            //sensor-bindings = <&inc_dec_mmv MOVE_UP MOVE_DOWN &inc_dec_mmv MOVE_LEFT MOVE_RIGHT>;
             sensor-bindings = <&mouse_move_x &mouse_move_y>;
         };
 
-//         numpad_layer { //Layer3
-//             bindings = <
+        numpad_layer { //Layer3
+            bindings = <
 
-// &to 0     &trans &trans &trans  &trans  &trans                       &kp KP_NLCK &kp DEL    &kp FSLH   &kp STAR    &kp MINUS   &trans
-// &trans    &trans &trans &trans  &trans  &trans                       &kp PG_UP   &kp KP_N7  &kp KP_N8  &kp KP_N9   &kp PLUS    &trans
-// &trans    &trans &trans &trans  &trans  &trans                       &kp PG_DN   &kp KP_N4  &kp KP_N5  &kp KP_N6   &kp RET     &trans
-// &trans    &trans &trans &trans  &trans  &trans    &trans   &trans    &trans      &kp KP_N1  &kp KP_N2  &kp KP_N3   &trans      &trans
-//                  &trans &trans  &trans  &trans    &trans   &trans    &trans      &kp KP_N0  &trans     &trans
-//             >;
+&to 0     &trans &trans &trans  &trans  &trans                       &kp KP_NLCK &kp DEL    &kp FSLH   &kp STAR    &kp MINUS   &trans
+&trans    &trans &trans &trans  &trans  &trans                       &kp PG_UP   &kp KP_N7  &kp KP_N8  &kp KP_N9   &kp PLUS    &trans
+&trans    &trans &trans &trans  &trans  &trans                       &kp PG_DN   &kp KP_N4  &kp KP_N5  &kp KP_N6   &kp RET     &trans
+&trans    &trans &trans &trans  &trans  &trans    &trans   &trans    &trans      &kp KP_N1  &kp KP_N2  &kp KP_N3   &trans      &trans
+                 &trans &trans  &trans  &trans    &trans   &trans    &trans      &kp KP_N0  &trans     &trans
+            >;
 
-//             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_UP PG_DN>;
-//         };
+            sensor-bindings = <&mouse_scroll_y &mouse_scroll_x>;
+        };
 
 //         dvorak_layer { //LayerX
 //             bindings = <
