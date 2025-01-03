@@ -47,17 +47,16 @@
             #sensor-binding-cells = <0>;
             bindings = <&kp UP_ARROW>, <&kp DOWN_ARROW>;
         };
-
-        // mouse_scroll_x: sensor_mouse_scroll_x {
-        //     compatible = "zmk,behavior-sensor-rotate";
-        //     #sensor-binding-cells = <0>;
-        //     bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
-        // };        
-        // mouse_scroll_y: sensor_mouse_scroll_y {
-        //     compatible = "zmk,behavior-sensor-rotate";
-        //     #sensor-binding-cells = <0>;     
-        //     bindings = <&msc SCRL_LEFT>, <&msc SCRL_RIGHT>;
-        // };
+        mouse_scroll_x: sensor_mouse_scroll_x {
+            compatible = "zmk,behavior-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
+        };        
+        mouse_scroll_y: sensor_mouse_scroll_y {
+            compatible = "zmk,behavior-sensor-rotate";
+            #sensor-binding-cells = <0>;     
+            bindings = <&msc SCRL_LEFT>, <&msc SCRL_RIGHT>;
+        };
         
         // mouse_x: sensor_rotate_x {
         //     compatible = "zmk,behavior-sensor-rotate-var";
@@ -126,7 +125,7 @@
                  &trans   &trans   &trans     &trans    &trans    &trans     &trans      &trans    &trans    &mmv MOVE_LEFT
              >;
 
-            sensor-bindings = <&mouse_y &mouse_x>;
+            sensor-bindings = <&mouse_scroll_y &mouse_scroll_x>;
         };
 
 //         numpad_layer { //Layer3
