@@ -51,6 +51,18 @@
             bindings = <&mmv MOVE_UP>, <&mmv MOVE_DOWN>;
             tap-ms = <20>; 
         };
+        mouse_scroll_x: mouse_scroll_x {
+            compatible = "zmk,behavior-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            bindings = <&msc SCRL_LEFT>, <&msc SCRL_RIGHT>;
+            tap-ms = <20>; 
+        };
+        mouse_scroll_y: mouse_scroll_y {
+            compatible = "zmk,behavior-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
+            tap-ms = <20>; 
+        };
         // mouse_scroll_x: sensor_mouse_scroll_x {
         //     compatible = "zmk,behavior-sensor-rotate-var";
         //     #sensor-binding-cells = <2>;
@@ -73,19 +85,8 @@
         //     #sensor-binding-cells = <2>;
         //     bindings = <&mmv MOVE_LEFT &mmv MOVE_RIGHT>;
         //  };
-
-
-        // mouse_x: sensor_mouse_x {
-        //     compatible = "zmk,behavior-sensor-rotate", "zmk,behavior-input-two-axis";
-        //     #sensor-binding-cells = <0>;
-        //     bindings = <&mmv MOVE_UP>, <&mmv MOVE_DOWN>;
-        // };
-        // mouse_y: sensor_mouse_y {
-        //     compatible = "zmk,behavior-sensor-rotate", "zmk,behavior-input-two-axis";
-        //     #sensor-binding-cells = <0>;
-        //     bindings = <&mmv MOVE_LEFT>, <&mmv MOVE_RIGHT>;
-        // };
     };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -106,7 +107,7 @@
                        &kp LGUI  &kp LALT &mo 2    &mo 1  &dbbs      &kp SPACE  &lt 1 RET   &mo 2    &kp RALT  &kp RGUI
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_UP PG_DN>; //&inc_dec_kp PG_UP PG_DN     &mouse_scroll_x 
+            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &mouse_scroll_x>; //&inc_dec_kp PG_UP PG_DN     &mouse_scroll_x 
         };
 
         symbols_layer { //Layer1
@@ -190,17 +191,3 @@
 //         };
     };
 };
-
-// &mmv {
-//     delay-ms = <U_MOUSE_MOVE_DELAY>;
-//     acceleration-exponent = <U_MOUSE_MOVE_EXPONENT>;
-//     time-to-max-speed-ms = <U_MOUSE_MOVE_TIME>;
-// };
-
-// &mwh {
-//     delay-ms = <U_MOUSE_SCROLL_DELAY>;
-//     acceleration-exponent = <U_MOUSE_SCROLL_EXPONENT>;
-//     time-to-max-speed-ms = <U_MOUSE_SCROLL_TIME>;
-// };
-
-
