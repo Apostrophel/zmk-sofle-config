@@ -155,7 +155,7 @@
              >;
 
             //sensor-bindings = <&inc_dec_mmv MOVE_UP MOVE_DOWN &inc_dec_mmv MOVE_LEFT MOVE_RIGHT>;
-            sensor-bindings = <&mouse_move_x &mouse_move_x>
+            sensor-bindings = <&mouse_move_x &mouse_move_x>;
         };
 
 //         numpad_layer { //Layer3
@@ -213,16 +213,16 @@
     };
 };
 
-&mmv {
-    delay-ms = <U_MOUSE_MOVE_DELAY>;
-    acceleration-exponent = <U_MOUSE_MOVE_EXPONENT>;
-    time-to-max-speed-ms = <U_MOUSE_MOVE_TIME>;
-};
+// &mmv {
+//     delay-ms = <U_MOUSE_MOVE_DELAY>;
+//     acceleration-exponent = <U_MOUSE_MOVE_EXPONENT>;
+//     time-to-max-speed-ms = <U_MOUSE_MOVE_TIME>;
+// };
 
-&mwh {
-    delay-ms = <U_MOUSE_SCROLL_DELAY>;
-    acceleration-exponent = <U_MOUSE_SCROLL_EXPONENT>;
-    time-to-max-speed-ms = <U_MOUSE_SCROLL_TIME>;
-};
+// &mwh {
+//     delay-ms = <U_MOUSE_SCROLL_DELAY>;
+//     acceleration-exponent = <U_MOUSE_SCROLL_EXPONENT>;
+//     time-to-max-speed-ms = <U_MOUSE_SCROLL_TIME>;
+// };
 
 
