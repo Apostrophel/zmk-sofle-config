@@ -39,50 +39,28 @@
             #sensor-binding-cells = <0>;
             bindings = <&kp UP_ARROW>, <&kp DOWN_ARROW>;
         };
-
-        // msc_up: mouse_scroll_up {
-        //     compatible = "zmk,behavior-input-two-axis";
-        //     #binding-cells = <0>;
-        //     bindings = <&msc SCRL_UP>;
-        // };
-        // msc_dn: mouse_scroll_dn {
-        //     compatible = "zmk,behavior-input-two-axis";
-        //     #binding-cells = <0>;
-        //     bindings = <&msc SCRL_DOWN>;
-        // };
-
+        mouse_move_x: mouse_move_x {
+            compatible = "zmk,behavior-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            bindings = <&mmv MOVE_RIGHT>, <&mmv MOVE_LEFT>;
+            tap-ms = <20>; 
+        };
+        mouse_move_y: mouse_move_y {
+            compatible = "zmk,behavior-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            bindings = <&mmv MOVE_UP>, <&mmv MOVE_DOWN>;
+            tap-ms = <20>; 
+        };
         // mouse_scroll_x: sensor_mouse_scroll_x {
         //     compatible = "zmk,behavior-sensor-rotate-var";
         //     #sensor-binding-cells = <2>;
         //     bindings = <&msc_up &msc_dn>;
-        // };        
-
-        // inc_dec_mmv: behavior_sensor_rotate_mouse_movement {
-		// 	compatible = "zmk,behavior-sensor-rotate-var";
-		// 	#sensor-binding-cells = <2>;
-        //  	bindings = <&mmv>, <&mmv>;
-        //     tap-ms = <20>;
-        // };
-
-        
-        mouse_move_x: mouse_move_x {
-            compatible = "zmk,behavior-sensor-rotate";
-            #sensor-binding-cells = <0>;
-            bindings = <&mmv MOVE_LEFT>, <&mmv MOVE_RIGHT>;
-            tap-ms = <20>; 
-        };
-
-        // mouse_move_y: mouse_move_y {
-        //     compatible = "zmk,behavior-sensor-rotate";
-        //     #sensor-binding-cells = <0>;
-        //     bindings = <&mmv MOVE_UP>, <&mmv MOVE_DOWN>;
-        // };
+        // };    
         // mouse_scroll_y: sensor_mouse_scroll_y {
         //     compatible = "zmk,behavior-sensor-rotate-var";
         //     #sensor-binding-cells = <2>;     
         //     bindings = <&msc SCRL_LEFT &msc SCRL_RIGHT>;
         // };
-        
         
         // mouse_x: sensor_rotate_x {
         //     compatible = "zmk,behavior-sensor-rotate-var";
@@ -155,7 +133,7 @@
              >;
 
             //sensor-bindings = <&inc_dec_mmv MOVE_UP MOVE_DOWN &inc_dec_mmv MOVE_LEFT MOVE_RIGHT>;
-            sensor-bindings = <&mouse_move_x &mouse_move_x>;
+            sensor-bindings = <&mouse_move_x &mouse_move_y>;
         };
 
 //         numpad_layer { //Layer3
