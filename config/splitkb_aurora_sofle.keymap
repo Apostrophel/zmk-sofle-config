@@ -49,12 +49,12 @@
         };
         mouse_scroll_x: sensor_mouse_scroll_x {
             compatible = "zmk,behavior-sensor-rotate-var";
-            #sensor-binding-cells = <0>;
+            #sensor-binding-cells = <2>;
             bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
         };        
         mouse_scroll_y: sensor_mouse_scroll_y {
             compatible = "zmk,behavior-sensor-rotate-var";
-            #sensor-binding-cells = <0>;     
+            #sensor-binding-cells = <2>;     
             bindings = <&msc SCRL_LEFT>, <&msc SCRL_RIGHT>;
         };
         
@@ -80,7 +80,7 @@
         //     compatible = "zmk,behavior-sensor-rotate", "zmk,behavior-input-two-axis";
         //     #sensor-binding-cells = <0>;
         //     bindings = <&mmv MOVE_LEFT>, <&mmv MOVE_RIGHT>;
-        //};
+        // };
     };
     keymap {
         compatible = "zmk,keymap";
