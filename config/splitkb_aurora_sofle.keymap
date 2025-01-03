@@ -45,14 +45,21 @@
         //     compatible = "zmk,behavior-sensor-rotation";
         //     binding = <&kp UP_ARROW>, <&kp DOWN_ARROW>;
         // };
-        mouse_x: sensor_rotation_scroll_x {
-            compatible = "zmk,behavior-sensor-rotation";
-            binding = <&mmv MOVE_UP>, <&mmv MOVE_DOWN>;
+        mouse_x: sensor_rotate_kp {
+            compatible = "zmk,behavior-sensor-rotate-var";
+            #sensor-binding-cells = <2>;
+            bindings = <&mmv MOVE_UP>, <&mmv MOVE_DOWN>;
          };
-        mouse_y: sensor_rotation_scroll_y {
-            compatible = "zmk,behavior-sensor-rotation";
-            binding = <&mmv MOVE_LEFT>, <&mmv MOVE_RIGHT>;
+        mouse_y: sensor_rotate_kp {
+            compatible = "zmk,behavior-sensor-rotate-var";
+            #sensor-binding-cells = <2>;
+            bindings = <&mmv MOVE_LEFT>, <&mmv MOVE_RIGHT>;
          };
+        // mousey: sensor_rotate_kp {
+        //     compatible = "zmk,behavior-sensor-rotate";
+        //     #sensor-binding-cells = <0>;
+        //     bindings = <&mmv MOVE_LEFT>, <&mmv MOVE_RIGHT>;
+        // };
     };
     keymap {
         compatible = "zmk,keymap";
