@@ -12,6 +12,16 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/ext_power.h>
 
+
+#define ZMK_POINTING_DEFAULT_MOVE_VAL 600  // default: 600
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 10    // default: 10
+#include <dt-bindings/zmk/pointing.h>
+
+
+// #define BASE 0
+// #define SYMS 1
+// #define NAVS 2
+
 / {
     behaviors {
         // shca: tap_dance_0 {                                 // This should be the same as &ht LSHIFT CAPS  ??
@@ -35,6 +45,14 @@
         //     compatible = "zmk,behavior-sensor-rotation";
         //     binding = <&kp UP_ARROW>, <&kp DOWN_ARROW>;
         // };
+        mouse_x: sensor_rotation_scroll_x {
+            compatible = "zmk,behavior-sensor-rotation";
+            binding = <&mmv MOVE_UP>, <&mmv MOVE_DOWN>;
+         };
+        mouse_y: sensor_rotation_scroll_y {
+            compatible = "zmk,behavior-sensor-rotation";
+            binding = <&mmv MOVE_LEFT>, <&mmv MOVE_RIGHT>;
+         };
     };
     keymap {
         compatible = "zmk,keymap";
@@ -75,16 +93,15 @@
         navigation_layer { //Layer2
             bindings = <
 
-&to 0     &trans &trans &trans  &trans  &trans                       &trans      &trans    &trans    &trans   &trans    &trans
-&kp GRAVE &kp N1 &kp N2 &kp N3  &kp N4  &kp N5                       &kp N6      &kp N7    &kp N8    &kp N9   &kp N0    &trans
-&kp F1    &kp F2 &kp F3 &kp F4  &kp F5  &kp F6                       &trans      &kp LEFT  &kp DOWN  &kp UP   &kp RIGHT &trans
-&kp F7    &kp F8 &kp F9 &kp F10 &kp F11 &kp F12   &trans   &kp M     &kp KP_PLUS &kp MINUS &kp EQUAL &kp LBKT &kp RBKT  &kp BSLH
-                 &trans &trans  &trans  &trans    &trans   &trans    &trans      &trans    &trans    &trans
-            >;
+&to 0     &trans &trans   &trans   &trans     &trans                       &trans      &trans    &mkp MCLK &trans    &trans    &trans
+&trans    &trans &trans   &kp UP   &trans     &trans                       &trans      &mkp LCLK &kp UP    &mkp RCLK &trans    &trans
+&trans    &trans &kp LEFT &kp DOWN &kp RIGHT  &trans                       &trans      &kp LEFT  &kp DOWN  &kp RIGHT &trans    &trans
+&trans    &trans &trans   &trans   &trans     &trans    &trans   &trans    &trans      &trans    &trans    &trans    &trans    &trans
+                 &trans   &trans   &trans     &trans    &trans   &trans    &trans      &trans    &trans    &trans
+             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_UP PG_DN>;
+            sensor-bindings = <&mouse_y &mouse_x>;
         };
-
 //         blue_layer { //Layer5
 //             bindings = <
 
