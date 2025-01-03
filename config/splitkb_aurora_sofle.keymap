@@ -48,23 +48,35 @@
             bindings = <&kp UP_ARROW>, <&kp DOWN_ARROW>;
         };
 
-        msc_up: mouse_scroll_up {
-            compatible = "zmk,behavior-input-two-axis";
-            #binding-cells = <0>;
-            bindings = <&msc SCRL_UP>;
-        };
-        msc_dn: mouse_scroll_dn {
-            compatible = "zmk,behavior-input-two-axis";
-            #binding-cells = <0>;
-            bindings = <&msc SCRL_DOWN>;
+        // msc_up: mouse_scroll_up {
+        //     compatible = "zmk,behavior-input-two-axis";
+        //     #binding-cells = <0>;
+        //     bindings = <&msc SCRL_UP>;
+        // };
+        // msc_dn: mouse_scroll_dn {
+        //     compatible = "zmk,behavior-input-two-axis";
+        //     #binding-cells = <0>;
+        //     bindings = <&msc SCRL_DOWN>;
+        // };
+
+        // mouse_scroll_x: sensor_mouse_scroll_x {
+        //     compatible = "zmk,behavior-sensor-rotate-var";
+        //     #sensor-binding-cells = <2>;
+        //     bindings = <&msc_up &msc_dn>;
+        // };        
+
+        
+        mouse_move_x: mouse_move_x {
+            compatible = "zmk,behavior-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            bindings = <&mmv MOVE_LEFT>, <&mmv MOVE_RIGHT>;
         };
 
-        mouse_scroll_x: sensor_mouse_scroll_x {
-            compatible = "zmk,behavior-sensor-rotate-var";
-            #sensor-binding-cells = <2>;
-            bindings = <&msc_up &msc_dn>;
-        };        
-
+        mouse_move_y: mouse_move_y {
+            compatible = "zmk,behavior-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            bindings = <&mmv MOVE_UP>, <&mmv MOVE_DOWN>;
+        };
         // mouse_scroll_y: sensor_mouse_scroll_y {
         //     compatible = "zmk,behavior-sensor-rotate-var";
         //     #sensor-binding-cells = <2>;     
@@ -141,7 +153,7 @@
                  &trans   &trans   &trans     &trans    &trans    &trans     &trans      &trans    &trans    &mmv MOVE_LEFT
              >;
 
-            sensor-bindings = <&mouse_scroll_x &mouse_scroll_x>;
+            sensor-bindings = <&mouse_move_y &mouse_move_x>;
         };
 
 //         numpad_layer { //Layer3
