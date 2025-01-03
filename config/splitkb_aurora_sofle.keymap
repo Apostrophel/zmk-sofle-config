@@ -13,7 +13,7 @@
 #include <dt-bindings/zmk/ext_power.h>
 
 
-#define ZMK_POINTING_DEFAULT_MOVE_VAL 5000  // default: 600
+#define ZMK_POINTING_DEFAULT_MOVE_VAL 10000  // default: 600
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 140    // default: 10
 
 
@@ -42,49 +42,27 @@
         mouse_move_x: mouse_move_x {
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
-            bindings = <&mmv MOVE_RIGHT>, <&mmv MOVE_LEFT>;
+            bindings = <&mmv MOVE_UP>, <&mmv MOVE_DOWN>;
             tap-ms = <20>; 
         };
         mouse_move_y: mouse_move_y {
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
-            bindings = <&mmv MOVE_UP>, <&mmv MOVE_DOWN>;
+            bindings = <&mmv MOVE_LEFT>, <&mmv MOVE_RIGHT>;
             tap-ms = <20>; 
         };
         mouse_scroll_x: mouse_scroll_x {
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
-            bindings = <&msc SCRL_LEFT>, <&msc SCRL_RIGHT>;
+            bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
             tap-ms = <20>; 
         };
         mouse_scroll_y: mouse_scroll_y {
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
-            bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
+            bindings = <&msc SCRL_LEFT>, <&msc SCRL_RIGHT>;
             tap-ms = <20>; 
         };
-        // mouse_scroll_x: sensor_mouse_scroll_x {
-        //     compatible = "zmk,behavior-sensor-rotate-var";
-        //     #sensor-binding-cells = <2>;
-        //     bindings = <&msc_up &msc_dn>;
-        // };    
-        // mouse_scroll_y: sensor_mouse_scroll_y {
-        //     compatible = "zmk,behavior-sensor-rotate-var";
-        //     #sensor-binding-cells = <2>;     
-        //     bindings = <&msc SCRL_LEFT &msc SCRL_RIGHT>;
-        // };
-        
-        // mouse_x: sensor_rotate_x {
-        //     compatible = "zmk,behavior-sensor-rotate-var";
-        //     #sensor-binding-cells = <2>;
-        //     bindings = <&mmv MOVE_UP &mmv MOVE_DOWN>;
-        //  };
-
-        // mouse_y: sensor_rotate_y {
-        //     compatible = "zmk,behavior-sensor-rotate-var";
-        //     #sensor-binding-cells = <2>;
-        //     bindings = <&mmv MOVE_LEFT &mmv MOVE_RIGHT>;
-        //  };
     };
 
     keymap {
@@ -107,7 +85,7 @@
                        &kp LGUI  &kp LALT &mo 2    &mo 1  &dbbs      &kp SPACE  &lt 1 RET   &mo 2    &kp RALT  &to 3
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &mouse_scroll_x>; //&inc_dec_kp PG_UP PG_DN     &mouse_scroll_x 
+            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &mouse_scroll_y>;
         };
 
         symbols_layer { //Layer1
@@ -120,7 +98,7 @@
                         &trans  &trans      &trans       &trans    &trans   &trans    &trans    &trans    &trans    &trans
             >;
 
-            sensor-bindings = <&a_scroll_y &a_scroll_x>;
+            sensor-bindings = <&a_scroll_x &a_scroll_y>;
         };
 
         navigation_layer { //Layer2
@@ -146,9 +124,21 @@
                  &trans &trans  &trans  &trans    &trans   &trans    &trans      &kp KP_N0  &trans     &to 0
             >;
 
-            sensor-bindings = <&mouse_scroll_y &mouse_scroll_x>;
+            sensor-bindings = <&mouse_scroll_x &mouse_scroll_y>;
         };
 
+//         bluetooth_layer { //Layer4
+//             bindings = <
+//
+// &to 0     &trans &trans &trans  &trans       &trans                       &trans      &trans        &trans        &trans        &trans        &trans
+// &trans    &trans &trans &trans  &trans       &trans                       &trans      &trans        &trans        &trans        &trans        &trans
+// &trans    &trans &trans &trans  &kp BT_CLR   &trans                       &trans      &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &trans 
+// &trans    &trans &trans &trans  &trans       &trans    &trans   &trans    &trans      &trans        &trans        &trans        &trans        &trans
+//                  &trans &trans  &trans       &trans    &trans   &trans    &trans      &trans        &trans        &trans
+//             >;
+//
+//              sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_UP PG_DN>;
+//         };
 //         dvorak_layer { //LayerX
 //             bindings = <
 //
