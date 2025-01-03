@@ -80,7 +80,7 @@
         //     compatible = "zmk,behavior-sensor-rotate", "zmk,behavior-input-two-axis";
         //     #sensor-binding-cells = <0>;
         //     bindings = <&mmv MOVE_LEFT>, <&mmv MOVE_RIGHT>;
-        };
+        //};
     };
     keymap {
         compatible = "zmk,keymap";
@@ -144,6 +144,18 @@
 //             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_UP PG_DN>;
 //         };
 
+//         colemac_layer { //LayerX
+//             bindings = <
+//
+// &trans    &trans &trans &trans  &trans  &trans                       &trans      &trans    &trans    &trans   &trans    &to 0
+// &trans    &trans &trans &trans  &trans  &trans                       &trans      &trans    &trans    &trans   &trans    &trans
+// &trans    &trans &trans &trans  &trans  &trans                       &trans      &trans    &trans    &trans   &trans    &trans
+// &trans    &trans &trans &trans  &trans  &trans    &trans   &trans    &trans      &trans    &trans    &trans   &trans    &trans
+//                  &trans &trans  &trans  &trans    &trans   &trans    &trans      &trans    &trans    &trans
+//             >;
+//
+//              sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_UP PG_DN>;
+//         };
 
 
 //         blue_layer { //Layer5
@@ -161,15 +173,15 @@
 
 //         template_layer { //LayerX
 //             bindings = <
-
+//
 // &to 0     &trans &trans &trans  &trans  &trans                       &trans      &trans    &trans    &trans   &trans    &trans
 // &trans    &trans &trans &trans  &trans  &trans                       &trans      &trans    &trans    &trans   &trans    &trans
 // &trans    &trans &trans &trans  &trans  &trans                       &trans      &trans    &trans    &trans   &trans    &trans
 // &trans    &trans &trans &trans  &trans  &trans    &trans   &trans    &trans      &trans    &trans    &trans   &trans    &trans
 //                  &trans &trans  &trans  &trans    &trans   &trans    &trans      &trans    &trans    &trans
 //             >;
-
-            // sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_UP PG_DN>;
+//
+//              sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_UP PG_DN>;
 //         };
     };
 };
