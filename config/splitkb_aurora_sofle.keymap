@@ -55,7 +55,7 @@
         mouse_move_x: mouse_move_x {
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
-            bindings = <&mmv MOVE_UP>, <&mmv MOVE_DOWN>;
+            bindings = <&mmv MOVE_DOWN>, <&mmv MOVE_UP>;
             tap-ms = <20>; 
         };
         mouse_move_y: mouse_move_y {
@@ -152,7 +152,7 @@
 &to 0      &kp F1       &kp F2  &kp F3      &kp F4       &kp F5                       &kp F6    &kp F7    &kp F8    &kp F9    &kp F10   &kp F11   
 &kp PIPE   &kp EXCL     &kp DQT &kp HASH    &kp DOLLAR   &kp PRCNT                    &kp AMPS  &kp CARET &kp QMARK &kp SQT   &none     &kp F12
 &none      &kp TILDE    &kp LT  &kp LBRC    &kp LPAR     &kp LBKT                     &kp RBKT  &kp RPAR  &kp RBRC  &kp GT    &kp EQUAL &kp INS
-&none      &none        &AT     &none       &kp MINUS    &kp BSLH  &trans   &trans    &kp FSLH  &kp PLUS  &kp STAR  &none     &none     &kp PSCRN
+&none      &none        &kp AT     &none       &kp MINUS    &kp BSLH  &trans   &trans    &kp FSLH  &kp PLUS  &kp STAR  &none     &none     &kp PSCRN
                         &trans  &trans      &trans       &trans    &trans   &trans    &trans    &trans    &trans    &trans
             >;
 
