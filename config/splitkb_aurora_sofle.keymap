@@ -79,13 +79,13 @@
 
         //TODO: ctrl z and ctrl y on rotation
 
-        //mod morph for scrolling y with wheel  but x when holding shift
-        xy_scroll: xy_scroll {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&mouse_scroll_y>, <&mouse_scroll_x>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
+        //mod morph for scrolling y with wheel  but x when holding shift //ERROR lacks:  #binding-cells = <0>;
+        // xy_scroll: xy_scroll {
+        //     compatible = "zmk,behavior-mod-morph";
+        //     #binding-cells = <0>;
+        //     bindings = <&mouse_scroll_y>, <&mouse_scroll_x>;
+        //     mods = <(MOD_LSFT|MOD_RSFT)>;
+        // };
 
 
 
@@ -143,7 +143,7 @@
                        &kp LGUI  &kp LALT &mo 2    &kp SPACE &mo 1      &lt 1 RET  &dbbsdel    &mo 2    &kp RALT   &to 3
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &xy_scroll>;
+            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &mouse_scroll_x>;
         };
 
         symbols_layer { //Layer1
