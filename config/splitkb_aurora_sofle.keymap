@@ -17,7 +17,7 @@
 #include <dt-bindings/zmk/ext_power.h>
 
 
-#define ZMK_POINTING_DEFAULT_MOVE_VAL 10000  // default: 600
+#define ZMK_POINTING_DEFAULT_MOVE_VAL 50000  // default: 600
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 140    // default: 10
 
 
@@ -83,7 +83,7 @@
         xy_scroll: xy_scroll {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&mouse_scroll_y, <&mouse_scroll_x>;
+            bindings = <&mouse_scroll_y>, <&mouse_scroll_x>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
