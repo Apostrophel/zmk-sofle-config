@@ -46,7 +46,18 @@
             bindings = <&dbbs>, <&kp DELETE>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
-        
+        bt0: btmacro0 {
+            bindings = <&bt BT_SEL 0 &to 0>;
+        };        
+        bt1: btmacro1 {
+            bindings = <&bt BT_SEL 1 &to 0>;
+        };        
+        bt2: btmacro1 {
+            bindings = <&bt BT_SEL 2 &to 0>;
+        };
+        bt3: btmacro1 {
+            bindings = <&bt BT_SEL 3 &to 0>;
+        };
 
         // Sensor rotation:
         a_scroll_y: sensor_arrow_scroll_y {
@@ -140,15 +151,15 @@
         base_layer { //Layer0
             bindings = <
 
-&kp ESC         &kp N1 &kp N2    &kp N3   &kp N4   &kp N5                          &kp N6      &kp N7   &kp N8     &kp N9    &kp N0     &kp DEL
-&kp TAB         &kp Q  &kp W     &kp E    &kp R    &kp T                           &kp Y       &kp U    &kp I      &kp O     &kp P      &kp QMARK
-&mt LSHFT CAPS  &kp A  &kp S     &kp D    &kp F    &kp G                           &kp H       &kp J    &kp K      &kp L     &starapo   &kp RSHFT
-&kp LCTRL       &kp Z  &kp X     &kp C    &kp V    &kp B     &kp C_MUTE &kp K_PP   &kp N       &kp M    &commasemi &dotcolon &minuscore &kp LCTRL
-                       &kp LGUI  &kp LALT &mo 2    &kp SPACE &mo 1      &lt 1 RET  &dbbsdel    &mo 2    &kp RALT   &to 3
+&kp ESC         &kp N1 &kp N2    &kp N3   &kp N4   &kp N5                            &kp N6      &kp N7   &kp N8     &kp N9    &kp N0     &kp DEL
+&kp TAB         &kp Q  &kp W     &kp E    &kp R    &kp T                             &kp Y       &kp U    &kp I      &kp O     &kp P      &kp QMARK
+&mt LSHFT CAPS  &kp A  &kp S     &kp D    &kp F    &kp G                             &kp H       &kp J    &kp K      &kp L     &starapo   &kp RSHFT
+&kp LCTRL       &kp Z  &kp X     &kp C    &kp V    &kp B       &kp C_MUTE &kp K_PP   &kp N       &kp M    &commasemi &dotcolon &minuscore &kp LCTRL
+                       &kp LGUI  &kp LALT &mo 3    &lt 1 SPACE &mo 2      &lt 1 RET  &dbbsdel    &mo 2    &kp RALT   &to 3
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &mouse_scroll_x>;
-        };
+        };               
 
         symbols_layer { //Layer1
             bindings = <
@@ -166,11 +177,11 @@
         navigation_layer { //Layer2
             bindings = <
 
-&to 0  &none &none    &none    &none     &none                         &none      &none     &mkp MCLK &none         &none           &none
-&none  &none &none    &kp UP   &none     &none                         &none      &mkp LCLK &kp UP    &mkp RCLK     &none           &none
-&none  &none &kp LEFT &kp DOWN &kp RIGHT &none                         &none      &kp LEFT  &kp DOWN  &kp RIGHT     &none           &none
-&none  &none &none    &none    &none     &none  &mkp LCLK  &mkp RCLK   &none      &none     &none     &none         &none           &none
-             &trans   &trans   &trans    &trans &trans     &trans      &trans     &trans    &trans    &trans
+&to 0  &none  &none    &none    &none     &none                         &none      &mkp LCLK &mkp MCLK &mkp RCLK    &none  &none
+&none  &none  &none    &kp UP   &none     &none                         &none      &mkp LCLK &kp UP    &mkp RCLK    &none  &none
+&none  &none  &kp LEFT &kp DOWN &kp RIGHT &none                         &none      &kp LEFT  &kp DOWN  &kp RIGHT    &none  &none
+&none  &none  &none    &none    &none     &none  &mkp LCLK  &mkp RCLK   &none      &none     &none     &none        &none  &none
+              &trans   &trans   &trans    &trans &trans     &trans      &trans     &trans    &trans    &trans
              >;
 
             sensor-bindings = <&mouse_move_x &mouse_move_y>;
@@ -181,7 +192,7 @@
 
 &to 0    &none        &none         &none        &none         &none                       &kp KP_NLCK &kp DEL    &kp FSLH   &kp STAR    &kp MINUS   &to 0 
 &none    &none        &none         &none        &bt BT_CLR    &none                       &kp PG_UP   &kp KP_N7  &kp KP_N8  &kp KP_N9   &kp PLUS    &none
-&none    &bt BT_SEL 3 &bt BT_SEL 2  &bt BT_SEL 1 &bt BT_SEL 0  &none                       &kp PG_DN   &kp KP_N4  &kp KP_N5  &kp KP_N6   &kp RET     &none
+&none    &bt3         &bt2          &bt1         &bt0          &none                       &kp PG_DN   &kp KP_N4  &kp KP_N5  &kp KP_N6   &kp RET     &none
 &none    &none        &none         &none        &none         &none     &none   &none     &none       &kp KP_N1  &kp KP_N2  &kp KP_N3   &none       &none
                       &trans        &trans       &trans        &trans    &trans  &trans    &none       &kp KP_N0  &none      &to 0
             >;
