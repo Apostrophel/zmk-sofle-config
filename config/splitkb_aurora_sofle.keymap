@@ -77,18 +77,15 @@
             tap-ms = <20>; 
         };
 
-        //TODO: ctrl z and ctrl y on rotation
+        //ctrl z and ctrl y on rotation
+        history_scroll: history_scroll {
+            compatible = "zmk,behavior-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            bindings = <&kp LC(Z)>, <&kp LC(Y)>;
+            tap-ms = <20>; 
+        };
 
-        //mod morph for scrolling y with wheel  but x when holding shift //ERROR lacks:  #binding-cells = <0>;
-        // xy_scroll: xy_scroll {
-        //     compatible = "zmk,behavior-mod-morph";
-        //     #binding-cells = <0>;
-        //     bindings = <&mouse_scroll_y>, <&mouse_scroll_x>;
-        //     mods = <(MOD_LSFT|MOD_RSFT)>;
-        // };
-
-
-
+    
         //mod morph for norwegian layout
         dotcolon: dot_colon {
             compatible = "zmk,behavior-mod-morph";
@@ -156,7 +153,7 @@
                         &trans  &trans      &trans       &trans    &trans   &trans    &trans    &trans    &trans    &trans
             >;
 
-            sensor-bindings = <&a_scroll_x &a_scroll_y>;
+            sensor-bindings = <&history_scroll &mouse_scroll_x>; //&a_scroll_x &a_scroll_y>
         };
 
         navigation_layer { //Layer2
@@ -172,7 +169,7 @@
             sensor-bindings = <&mouse_move_x &mouse_move_y>;
         };
 
-        numpad_layer { //Layer3 //TODO return to 0 after BT SEL
+        numpad_layer { //Layer3 //TODO return to L0 after BT SEL
             bindings = <
 
 &to 0    &none        &none         &none        &none         &none                       &kp KP_NLCK &kp DEL    &kp FSLH   &kp STAR    &kp MINUS   &to 0 
