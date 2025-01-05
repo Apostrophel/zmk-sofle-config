@@ -47,15 +47,19 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
         bt0: btmacro0 {
+            #binding-cells = <0>;
             bindings = <&bt BT_SEL 0 &to 0>;
         };        
         bt1: btmacro1 {
+            #binding-cells = <0>;
             bindings = <&bt BT_SEL 1 &to 0>;
         };        
         bt2: btmacro2 {
+            #binding-cells = <0>;
             bindings = <&bt BT_SEL 2 &to 0>;
         };
         bt3: btmacro3 {
+            #binding-cells = <0>;
             bindings = <&bt BT_SEL 3 &to 0>;
         };
 
