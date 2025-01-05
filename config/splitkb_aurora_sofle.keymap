@@ -21,6 +21,13 @@
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 140    // default: 10
 
 
+// &mmv {
+//     x-input-code = <INPUT_REL_X>;
+//     y-input-code = <INPUT_REL_Y>;
+//     time-to-max-speed-ms = <300>;
+//     acceleration-exponent = <1>;
+// };
+
 #include <dt-bindings/zmk/pointing.h>
 
 
@@ -55,7 +62,7 @@
         mouse_move_x: mouse_move_x {
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
-            bindings = <&mmv MOVE_DOWN>, <&mmv MOVE_UP>;
+            bindings = <&mmv MOVE_X(-500)>, <&mmv MOVE_X(1000)>;
             tap-ms = <20>; 
         };
         mouse_move_y: mouse_move_y {
@@ -170,7 +177,7 @@
         };
 
         numpad_layer { //Layer3 //TODO return to L0 after BT SEL
-            bindings = <
+            bindings = <BT_CLR
 
 &to 0    &none        &none         &none        &none         &none                       &kp KP_NLCK &kp DEL    &kp FSLH   &kp STAR    &kp MINUS   &to 0 
 &none    &none        &none         &none        &bt BT_CLR    &none                       &kp PG_UP   &kp KP_N7  &kp KP_N8  &kp KP_N9   &kp PLUS    &none
