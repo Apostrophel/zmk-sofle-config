@@ -52,10 +52,10 @@
         bt1: btmacro1 {
             bindings = <&bt BT_SEL 1 &to 0>;
         };        
-        bt2: btmacro1 {
+        bt2: btmacro2 {
             bindings = <&bt BT_SEL 2 &to 0>;
         };
-        bt3: btmacro1 {
+        bt3: btmacro3 {
             bindings = <&bt BT_SEL 3 &to 0>;
         };
 
