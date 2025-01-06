@@ -69,7 +69,7 @@
         hold_tapmod: behavior_tap_dance {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <200>;
+            //tapping-term-ms = <200>;
             bindings = <&lt 1 &hold_layer_dbbsdel>, <&hold_layer_dbbsdel>;
         };
 
