@@ -41,12 +41,6 @@
             bindings = <&kp BSPC>, <&kp LC(BSPC)>;
         };
 
-        // ctrl_bspc: behavior_macro {
-        //     compatible = "zmk,behavior-macro";
-        //     label = "CTRL_BSPC";
-        //     bindings = <&kp LC(BSPC)>;
-        // };
-
         dbbsdel: double_back_delete {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
@@ -54,36 +48,14 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
-        hold_layer_dbbsdel: behavior_mod_tap {
-            compatible = "zmk,behavior-mod-tap";
-            #binding-cells = <1>;
-            bindings = <&dbbsdel>, <1>; // `1` is the layer number to activate when held
-            hold-trigger-key-positions = <0>;
-            tap-hold-trigger-threshold-ms = <200>;
-        };
-
-         // Define a mod-tap for holding to activate a layer and tapping for dbbsdel behavior
-        // hold_layer_dbbsdel: behavior_mod_tap {
-        //     compatible = "zmk,behavior-mod-tap";
-        //     #binding-cells = <1>;
-        //     bindings = <&dbbsdel>;
-        //     hold-trigger-key-positions = <0>;
-        //     tap-hold-trigger-threshold-ms = <200>;
-        //};
-
-        // Combine layer activation, tap for backspace, double-tap for backspace word, and shift + delete
-        // hold_tapmod: behavior_tap_dance {
-        //     compatible = "zmk,behavior-tap-dance";
-        //     #binding-cells = <0>;
-        //     //tapping-term-ms = <200>;
-        //     bindings = <&lt 1 &hold_layer_dbbsdel>, <&hold_layer_dbbsdel>;
-        // };
-
         hold_tapmod: behavior_tap_dance {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
             tapping-term-ms = <200>;
-            bindings = <&hold_layer_dbbsdel>, <&hold_layer_dbbsdel>;
+            quick-tap-ms = <200>;
+            require-prior-idle-ms = <125>;
+            bindings = <&mo 1>, <&dbbsdel>;
         };
 
 
