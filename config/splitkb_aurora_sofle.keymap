@@ -48,11 +48,17 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
+        // dbb_hold_tap: double_back_hold_tap {
+        //     compatible = "zmk,behavior-hold-tap";
+        //     #binding-cells = <0>;
+        //     bindings = <&mo 1 &dbbsdel>;
+        // };
+
         dbb_hold_tap: double_back_hold_tap {
-            compatible = "zmk,behavior-hold-tap";
+            compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&mo 1>, <&dbbsdel>;
-        };
+            bindings = <&macro_press &mo 1>, <&macro_press &dbbsdel>;
+        };        
 
         // Macros (bluetooth)
         bt0: btmacro0 {
