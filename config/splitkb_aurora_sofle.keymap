@@ -26,8 +26,8 @@
     &mmv {
         x-input-code = <INPUT_REL_X>;
         y-input-code = <INPUT_REL_Y>;
-        time-to-max-speed-ms = <300>;
-        acceleration-exponent = <2>;
+        time-to-max-speed-ms = <100>;
+        acceleration-exponent = <1>;
     };
     &sensors {
         triggers-per-rotation = <72>;
@@ -87,32 +87,31 @@
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
             bindings = <&kp LEFT_ARROW>, <&kp RIGHT_ARROW>;
-            tap-ms = <20>;  // Decrease the tap time for quicker response
-            //min-steps = <1>; // Allow the action to trigger after a single rotation step
+            tap-ms = <20>;  
         };
         a_scroll_x: sensor_arrow_scroll_x {
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
             bindings = <&kp UP_ARROW>, <&kp DOWN_ARROW>;
-            tap-ms = <20>;  // Decrease the tap time for quicker response            
+            tap-ms = <20>;              
         };
         mouse_move_x: mouse_move_x {
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
             bindings = <&mmv MOVE_UP>, <&mmv MOVE_DOWN>;
-            tap-ms = <20>;  // Decrease the tap time for quicker response
+            tap-ms = <20>;  
         };
         mouse_move_y: mouse_move_y {
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
             bindings = <&mmv MOVE_LEFT>, <&mmv MOVE_RIGHT>;
-            tap-ms = <20>;  // Decrease the tap time for quicker response
+            tap-ms = <20>;  
         };
         mouse_scroll_x: mouse_scroll_x {
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
             bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
-            tap-ms = <20>;  // Decrease the tap time for quicker response
+            tap-ms = <20>;  
         };
         mouse_scroll_y: mouse_scroll_y {
             compatible = "zmk,behavior-sensor-rotate";
