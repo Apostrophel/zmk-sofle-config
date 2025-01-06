@@ -72,11 +72,18 @@
         //};
 
         // Combine layer activation, tap for backspace, double-tap for backspace word, and shift + delete
+        // hold_tapmod: behavior_tap_dance {
+        //     compatible = "zmk,behavior-tap-dance";
+        //     #binding-cells = <0>;
+        //     //tapping-term-ms = <200>;
+        //     bindings = <&lt 1 &hold_layer_dbbsdel>, <&hold_layer_dbbsdel>;
+        // };
+
         hold_tapmod: behavior_tap_dance {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            //tapping-term-ms = <200>;
-            bindings = <&lt 1 &hold_layer_dbbsdel>, <&hold_layer_dbbsdel>;
+            tapping-term-ms = <200>;
+            bindings = <&hold_layer_dbbsdel>, <&hold_layer_dbbsdel>;
         };
 
 
