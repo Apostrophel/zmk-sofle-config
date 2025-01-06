@@ -9,6 +9,7 @@
 
 //TODO: rotary knob sensistivity. I want on 'click' per activation in stead of two.
 //TODO: screen brightness: C_BRI_UP / DN
+//TODO: alt f4 macro. and think of other macros.
 
 
 #include <behaviors.dtsi>
@@ -49,9 +50,10 @@
 
         dbb_hold_tap: double_back_hold_tap {
             compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
+            #binding-cells = <0>;
             bindings = <&mo 1>, <&dbbsdel>;
         };
+
         // Macros (bluetooth)
         bt0: btmacro0 {
             compatible = "zmk,behavior-macro";
