@@ -21,17 +21,18 @@
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 140    // default: 10
 
 
-// &mmv {
-//     x-input-code = <INPUT_REL_X>;
-//     y-input-code = <INPUT_REL_Y>;
-//     time-to-max-speed-ms = <300>;
-//     acceleration-exponent = <1>;
-// };
 
-
+// Mouse and rotary redefinition:
+    &mmv {
+        x-input-code = <INPUT_REL_X>;
+        y-input-code = <INPUT_REL_Y>;
+        time-to-max-speed-ms = <300>;
+        acceleration-exponent = <2>;
+    };
     &sensors {
         triggers-per-rotation = <72>;
     };
+
 
 #include <dt-bindings/zmk/pointing.h>
 
