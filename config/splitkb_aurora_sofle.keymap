@@ -40,7 +40,13 @@
             tapping-term-ms = <200>;
             bindings = <&kp BSPC>, <&kp LC(BSPC)>;
         };
-        //test for shift del funk on top of dbbs
+
+        ctrl_bspc: behavior_macro {
+            compatible = "zmk,behavior-macro";
+            label = "CTRL_BSPC";
+            bindings = <&kp LC(BSPC)>;
+        };
+
         dbbsdel: double_back_delete {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
@@ -48,21 +54,21 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
-        td_mt: tap_dance_mod_tap {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&mt LSHIFT CAPSLOCK>, <&kp LCTRL>;
-            bindings = <&lt 1 &dbbsdel>;
-        }; 
-
-         // Define a mod-tap for holding to activate a layer and tapping for dbbsdel behavior
         hold_layer_dbbsdel: behavior_mod_tap {
             compatible = "zmk,behavior-mod-tap";
             #binding-cells = <1>;
-            bindings = <&dbbsdel>;
+            bindings = <&dbbsdel>, <1>; // `1` is the layer number to activate when held
             hold-trigger-key-positions = <0>;
             tap-hold-trigger-threshold-ms = <200>;
+        };
+
+         // Define a mod-tap for holding to activate a layer and tapping for dbbsdel behavior
+        // hold_layer_dbbsdel: behavior_mod_tap {
+        //     compatible = "zmk,behavior-mod-tap";
+        //     #binding-cells = <1>;
+        //     bindings = <&dbbsdel>;
+        //     hold-trigger-key-positions = <0>;
+        //     tap-hold-trigger-threshold-ms = <200>;
         };
 
         // Combine layer activation, tap for backspace, double-tap for backspace word, and shift + delete
