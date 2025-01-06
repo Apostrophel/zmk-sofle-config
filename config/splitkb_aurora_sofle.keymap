@@ -172,8 +172,8 @@
         base_layer { //Layer0
             bindings = <
 
-&kp ESC         &kp N1 &kp N2    &kp N3   &kp N4  &kp N5                                   &kp N6         &kp N7        &kp N8     &kp N9    &kp N0     &kp 
-&kp TAB         &kp Q  &kp W     &kp E    &kp R   &kp T                                    &kp Y          &kp U         &kp I      &kp O     &kp P      &kp 
+&kp ESC         &kp N1 &kp N2    &kp N3   &kp N4  &kp N5                                   &kp N6         &kp N7        &kp N8     &kp N9    &kp N0     &kp GRAVE
+&kp TAB         &kp Q  &kp W     &kp E    &kp R   &kp T                                    &kp Y          &kp U         &kp I      &kp O     &kp P      &kp GRAVE
 &mt LSHFT CAPS  &kp A  &kp S     &kp D    &kp F   &kp G                                    &kp H          &kp J         &kp K      &kp L     &starapo   &kp RSHFT
 &kp LCTRL       &kp Z  &kp X     &kp C    &kp V   &kp B         &kp C_MUTE      &kp K_PP   &kp N          &kp M         &commasemi &dotcolon &minuscore &kp LCTRL
                        &kp LGUI  &kp LALT &mo 4   &lt 1 SPACE   &mo_tog 2 2     &lt 2 RET  &hold_tm 1 1   &mo_tog 3 3   &kp RALT   &kp RGUI
