@@ -28,6 +28,11 @@
 //     acceleration-exponent = <1>;
 // };
 
+
+    &sensors {
+        triggers-per-rotation = <36>;
+    };
+
 #include <dt-bindings/zmk/pointing.h>
 
 
