@@ -41,11 +41,11 @@
             bindings = <&kp BSPC>, <&kp LC(BSPC)>;
         };
 
-        ctrl_bspc: behavior_macro {
-            compatible = "zmk,behavior-macro";
-            label = "CTRL_BSPC";
-            bindings = <&kp LC(BSPC)>;
-        };
+        // ctrl_bspc: behavior_macro {
+        //     compatible = "zmk,behavior-macro";
+        //     label = "CTRL_BSPC";
+        //     bindings = <&kp LC(BSPC)>;
+        // };
 
         dbbsdel: double_back_delete {
             compatible = "zmk,behavior-mod-morph";
