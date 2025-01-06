@@ -51,7 +51,7 @@
         hold_L1: simple_hold {
             compatible = "zmk,behavior-layer-momentary";
             #binding-cells = <0>;
-            bindings = <1>;
+            layer = <1>;
         };
 
         hold_tapmod: behavior_tap_dance {
