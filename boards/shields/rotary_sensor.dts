@@ -1,0 +1,7 @@
+/ {
+
+
+    &sensors {
+        triggers-per-rotation = <18>;
+    };
+};
