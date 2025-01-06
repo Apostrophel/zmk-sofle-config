@@ -69,7 +69,7 @@
         //     bindings = <&dbbsdel>;
         //     hold-trigger-key-positions = <0>;
         //     tap-hold-trigger-threshold-ms = <200>;
-        };
+        //};
 
         // Combine layer activation, tap for backspace, double-tap for backspace word, and shift + delete
         hold_tapmod: behavior_tap_dance {
