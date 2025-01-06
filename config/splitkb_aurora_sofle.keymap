@@ -7,22 +7,16 @@
  * 
  */
 
-//TODO: rotary knob sensistivity. I want on 'click' per activation in stead of two.
-//TODO: screen brightness: C_BRI_UP / DN
-//TODO: alt f4 macro. and think of other macros.
-//TODO: macros to make and think about: alt f4, f5, alt f2                      
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/ext_power.h>
 
 
+// Mouse and rotary redefinition:
 #define ZMK_POINTING_DEFAULT_MOVE_VAL 5000  // default: 600
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 140    // default: 10
 
-
-
-// Mouse and rotary redefinition:
     &mmv {
         x-input-code = <INPUT_REL_X>;
         y-input-code = <INPUT_REL_Y>;
@@ -217,17 +211,17 @@
               &trans  &trans    &trans        &trans    &trans  &trans    &trans      &kp KP_N0  &none      &to 0
             >;
 
-            sensor-bindings = <&mouse_scroll_x &mouse_scroll_y>;  //todo add screen brightness here,
+            sensor-bindings = <&inc_dec_kp C_BRI_UP C_BRI_DN &mouse_scroll_x>; 
         };
 
         macro_layer { //Layer4                              
             bindings = <
 
-&to 0     &trans &trans &trans  &trans  &trans                       &trans      &trans    &trans    &trans   &trans    &trans
-&trans    &trans &trans &trans  &trans  &trans                       &trans      &trans    &trans    &trans   &trans    &trans
-&trans    &trans &trans &trans  &trans  &trans                       &trans      &trans    &trans    &trans   &trans    &trans
-&trans    &trans &trans &trans  &trans  &trans    &trans   &trans    &trans      &trans    &trans    &trans   &trans    &trans
-                 &trans &trans  &trans  &trans    &trans   &trans    &trans      &trans    &trans    &trans
+&to 0    &none  &none  &none  &kp LA(F4)  &none                     &none  &none        &none    &none   &soft_off   &sys_reset
+&none    &none  &none  &none  &none       &none                     &none  &none        &none    &none   &none       &none
+&none    &none  &none  &none  &none       &none                     &none  &kp LA(F10)  &none    &none   &none       &none
+&none    &none  &none  &none  &none       &none    &none   &none    &none  &none        &none    &none   &none       &none
+                &none  &none  &none       &none    &none   &none    &none  &none        &none    &none
             >;
 
              sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_UP PG_DN>;
