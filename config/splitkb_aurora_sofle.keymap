@@ -30,7 +30,7 @@
 
 
     &sensors {
-        triggers-per-rotation = <36>;
+        triggers-per-rotation = <72>;
     };
 
 #include <dt-bindings/zmk/pointing.h>
