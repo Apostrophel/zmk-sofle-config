@@ -166,7 +166,7 @@
 &kp TAB         &kp Q  &kp W     &kp E    &kp R         &kp T                                    &kp Y          &kp U   &kp I      &kp O     &kp P      &kp GRAVE
 &mt LSHFT CAPS  &kp A  &kp S     &kp D    &kp F         &kp G                                    &kp H          &kp J   &kp K      &kp L     &starapo   &kp RSHFT
 &kp LCTRL       &kp Z  &kp X     &kp C    &kp V         &kp B         &kp C_MUTE      &kp K_PP   &kp N          &kp M   &commasemi &dotcolon &minuscore &kp LCTRL
-                       &kp LGUI  &kp LALT &mo_tog 3 3   &lt 1 SPACE   &mo_tog 2 2     &lt 2 RET  &lt 1 BSPC   &mo 4   &kp RALT   &kp RGUI
+                       &kp LGUI  &kp LALT &mo_tog 3 3   &lt 1 SPACE   &mo_tog 2 2     &lt 2 RET  &lt 1 BSPC     &mo 4   &kp RALT   &kp RGUI
             >;                                                                                   //hold_tm 1 1
 
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &mouse_scroll_x>;
@@ -179,23 +179,23 @@
 &kp PIPE   &kp EXCL     &kp DQT &kp HASH    &kp DOLLAR   &kp PRCNT                    &kp AMPS  &kp CARET &kp QMARK &kp SQT   &none     &kp F12
 &none      &kp TILDE    &kp LT  &kp LBRC    &kp LPAR     &kp LBKT                     &kp RBKT  &kp RPAR  &kp RBRC  &kp GT    &kp EQUAL &kp INS
 &none      &none        &kp AT  &none       &kp MINUS    &kp BSLH   &trans   &trans   &kp FSLH  &kp PLUS  &kp STAR  &none     &none     &kp PSCRN
-                        &trans  &trans      &trans       &kp SPACE  &to 0    &trans   &trans    &trans    &trans    &trans
+                        &trans  &trans      &trans       &kp SPACE  &to 0    &kp RET  &kp BSPC  &trans    &trans    &trans
             >;
 
             sensor-bindings = <&history_scroll &mouse_scroll_x>; //&a_scroll_x &a_scroll_y>
         };      
 
-        navigation_layer { //Layer2
+        navigation_layer { //Layer2  //TODO: make firefox nav macro for alt -> and alt + <-
             bindings = <
 
-&to 0  &none  &none    &none    &none     &none                         &none      &mkp LCLK &mkp MCLK &mkp RCLK    &none           &none
-&none  &none  &none    &kp UP   &none     &none                         &none      &mkp LCLK &kp UP    &mkp RCLK    &none           &none
-&none  &none  &kp LEFT &kp DOWN &kp RIGHT &none                         &kp PG_UP  &kp LEFT  &kp DOWN  &kp RIGHT    &mmv MOVE_UP    &none
-&none  &none  &none    &none    &none     &none  &mkp LCLK  &mkp RCLK   &kp PG_UP  &kp HOME  &kp END   &none        &mmv MOVE_DOWN  &mmv MOVE_RIGHT
-              &trans   &trans   &trans    &trans &trans     &trans      &trans     &trans    &trans    &mmv MOVE_LEFT
+&to 0      &none    &none            &none        &none             &none                         &none      &mkp LCLK &mkp MCLK &mkp RCLK    &none           &none
+&none      &none    &kp LS(LG(LEFT)) &kp LG(UP)   &kp LS(LG(RIGHT)) &none                         &none      &mkp LCLK &kp UP    &mkp RCLK    &none           &none
+&kp LSHFT  &none    &kp LG(LEFT)     &kp LG(DOWN) &kp LG(RIGHT)     &none                         &kp PG_UP  &kp LEFT  &kp DOWN  &kp RIGHT    &mmv MOVE_UP    &none
+&kp LCTRL  &none    &kp LA(LEFT)     &none        &kp LA(RIGHT)     &none   &mkp RCLK  &mkp LCLK  &kp PG_DN  &kp HOME  &kp END   &none        &mmv MOVE_DOWN  &mmv MOVE_RIGHT
+                    &trans           &trans       &trans            &trans  &to 0      &kp RET    &trans     &trans    &trans    &mmv MOVE_LEFT
              >;
 
-            sensor-bindings = <&mouse_move_x &mouse_move_y>;
+            sensor-bindings = <&mouse_move_x &mouse_move_y>;  //TODO: add mod morph for shift swap xy
         };
 
         numpad_layer { //Layer3
