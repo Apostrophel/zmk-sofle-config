@@ -123,22 +123,30 @@
 
         //Macros for norwegian letters å,ø,æ also upper case 
 
-        //å
-        ao: a_o {       //use: &kp RG(&ao)
+        
+        aa: a_o {               //å
             compatible = "zmk,behavior-macro"; 
             #binding-cells = <0>;
-            bindings = <&macro_press &kp A>,<&macro_press &kp O>;
+            bindings =
+                <&macro_press &kp RGUI>,
+                <&macro_tap &kp A &kp O>,          
+                <&macro_release &kp RGUI>;
         };   
-        //Å
-        aO: a_O {       //use: &kp RG(&aO)
+        AA: a_O {               //Å
             compatible = "zmk,behavior-macro"; 
             #binding-cells = <0>;
-            bindings = <&macro_press &kp A>,<&macro_press &kp LS(O)>;
+            bindings =
+                <&macro_press &kp RGUI>,
+                <&macro_tap &kp A>,                 
+                <&macro_press &kp LSHFT>,
+                <&macro_tap &kp O>,
+                <&macro_release &kp LSHFT>,
+                <&macro_release &kp RGUI>;
         };   
-        aa_nor: norwegian_aa {
+        aA_nor: norwegian_aa {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp RG(&ao)>, <&kp RG(&aO)>;
+            bindings = <&aa>, <&AA>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
         
@@ -198,7 +206,7 @@
             bindings = <
 
 &to 0      &kp F1       &kp F2  &kp F3      &kp F4       &kp F5                       &kp F6    &kp F7    &kp F8    &kp F9    &kp F10   &kp F11   
-&kp PIPE   &kp EXCL     &kp DQT &kp HASH    &kp DOLLAR   &kp PRCNT                    &kp AMPS  &kp CARET &kp QMARK &kp SQT   &aa_nor   &kp F12
+&kp PIPE   &kp EXCL     &kp DQT &kp HASH    &kp DOLLAR   &kp PRCNT                    &kp AMPS  &kp CARET &kp QMARK &kp SQT   &aA_nor   &kp F12
 &none      &kp TILDE    &kp LT  &kp LBRC    &kp LPAR     &kp LBKT                     &kp RBKT  &kp RPAR  &kp RBRC  &kp GT    &kp EQUAL &kp INS
 &none      &none        &kp AT  &none       &kp MINUS    &kp BSLH   &trans   &trans   &kp FSLH  &kp PLUS  &kp STAR  &none     &none     &kp PSCRN
                         &trans  &trans      &trans       &kp SPACE  &to 0    &kp RET  &kp BSPC  &trans    &trans    &trans
