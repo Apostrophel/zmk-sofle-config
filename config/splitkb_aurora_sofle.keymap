@@ -135,9 +135,8 @@
             #binding-cells = <0>;
             bindings =
                 <&macro_press &kp RGUI>,
-                <&macro_tap &kp A>,                 
                 <&macro_press &kp LSHFT>,
-                <&macro_tap &kp O>,
+                <&macro_tap &kp A &kp O>,
                 <&macro_release &kp LSHFT>,
                 <&macro_release &kp RGUI>;
         };   
@@ -149,31 +148,58 @@
         };
 
         // øØ
-        // oo: o_o {               //
-        //     compatible = "zmk,behavior-macro"; 
-        //     #binding-cells = <0>;
-        //     bindings =
-        //         <&macro_press &kp RGUI>,
-        //         <&macro_tap &kp O &kp SLASH>,          
-        //         <&macro_release &kp RGUI>;
-        // };   
-        // OO: o_O {               //Ø
-        //     compatible = "zmk,behavior-macro"; 
-        //     #binding-cells = <0>;
-        //     bindings =
-        //         <&macro_press &kp RGUI>,
-        //         <&macro_tap &kp SLASH>,           
-        //         <&macro_press &kp LSHFT>,
-        //         <&macro_tap &kp O>,
-        //         <&macro_release &kp LSHFT>,
-        //         <&macro_release &kp RGUI>;
-        // };   
-        // oO_nor: norwegian_oo {
-        //     compatible = "zmk,behavior-mod-morph";
-        //     #binding-cells = <0>;
-        //     bindings = <&oo>, <&OO>;
-        //     mods = <(MOD_LSFT|MOD_RSFT)>;
-        // };
+        oo: oo_lower {               //
+            compatible = "zmk,behavior-macro"; 
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press &kp RGUI>,
+                <&macro_tap &kp O &kp SLASH>,          
+                <&macro_release &kp RGUI>;
+        };   
+        OO: oo_upper {               //Ø
+            compatible = "zmk,behavior-macro"; 
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press &kp RGUI>,
+                <&macro_tap &kp SLASH>,           
+                <&macro_press &kp LSHFT>,
+                <&macro_tap &kp O>,
+                <&macro_release &kp LSHFT>,
+                <&macro_release &kp RGUI>;
+        };   
+        oo_nor: norwegian_oo {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&oo>, <&OO>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        // ae
+        ae: ae_lower {               //
+            compatible = "zmk,behavior-macro"; 
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press &kp RGUI>,
+                <&macro_tap &kp A>,          
+                <&macro_release &kp RGUI>;
+        };   
+        AE: ae_upper {               //Ø
+            compatible = "zmk,behavior-macro"; 
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press &kp RGUI>,
+                <&macro_press &kp LSHFT>,
+                <&macro_tap &kp A>,           
+                <&macro_tap &kp E>,
+                <&macro_release &kp LSHFT>,
+                <&macro_release &kp RGUI>;
+        };   
+        oo_nor: norwegian_oo {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&oo>, <&OO>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
         
 
         //mod morph for norwegian layout
@@ -231,7 +257,7 @@
             bindings = <
 
 &to 0      &kp F1       &kp F2  &kp F3      &kp F4       &kp F5                       &kp F6    &kp F7    &kp F8    &kp F9    &kp F10   &kp F11   
-&kp PIPE   &kp EXCL     &kp DQT &kp HASH    &kp DOLLAR   &kp PRCNT                    &kp AMPS  &kp CARET &kp QMARK &kp SQT   &aA_nor   &kp F12
+&kp PIPE   &kp EXCL     &kp DQT &kp HASH    &kp DOLLAR   &kp PRCNT                    &kp AMPS  &kp CARET &kp QMARK &kp SQT   &aa_nor   &kp F12
 &none      &kp TILDE    &kp LT  &kp LBRC    &kp LPAR     &kp LBKT                     &kp RBKT  &kp RPAR  &kp RBRC  &kp GT    &kp EQUAL &kp INS
 &none      &none        &kp AT  &none       &kp MINUS    &kp BSLH   &trans   &trans   &kp FSLH  &kp PLUS  &kp STAR  &none     &none     &kp PSCRN
                         &trans  &trans      &trans       &kp SPACE  &to 0    &kp RET  &kp BSPC  &trans    &trans    &trans
