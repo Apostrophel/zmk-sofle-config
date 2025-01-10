@@ -127,7 +127,7 @@
             #binding-cells = <0>;
             bindings =
                 <&macro_press &kp RGUI>,
-                <&macro_tap &kp A &kp O>,          
+                <&macro_tap &kp O &kp A>,          
                 <&macro_release &kp RGUI>;
         };   
         aa_u: aa_upper {                                                    
@@ -136,9 +136,10 @@
             bindings =
                 <&macro_press &kp RGUI>,
                 <&macro_press &kp LSHFT>,
-                <&macro_tap &kp A &kp O>,
+                <&macro_tap &kp O>,
                 <&macro_release &kp LSHFT>,
-                <&macro_release &kp RGUI>;
+                <&macro_release &kp RGUI>,
+                <&macro_tap &kp A>;
         };   
         aa_nor: norwegian_aa {
             compatible = "zmk,behavior-mod-morph";
@@ -149,23 +150,24 @@
 
         // øØ
         oo_l: oo_lower {               
-            compatible = "zmk,behavior-macro"; 
+            compatible = "zmk,behavior-macro"; //
             #binding-cells = <0>;
             bindings =
                 <&macro_press &kp RGUI>,
-                <&macro_tap &kp O &kp SLASH>,          
-                <&macro_release &kp RGUI>;
+                <&macro_tap &kp O>,          
+                <&macro_release &kp RGUI>,
+                <&macro_tap &SLASH>,
         };   
         oo_u: oo_upper {               
             compatible = "zmk,behavior-macro"; 
             #binding-cells = <0>;
             bindings =
-                <&macro_press &kp RGUI>,
-                <&macro_tap &kp SLASH>,           
+                <&macro_press &kp RGUI>,         
                 <&macro_press &kp LSHFT>,
                 <&macro_tap &kp O>,
                 <&macro_release &kp LSHFT>,
-                <&macro_release &kp RGUI>;
+                <&macro_release &kp RGUI>,
+                <&macro_tap &kp SLASH>;
         };   
         oo_nor: norwegian_oo {
             compatible = "zmk,behavior-mod-morph";
@@ -180,7 +182,7 @@
             #binding-cells = <0>;
             bindings =
                 <&macro_press &kp RGUI>,
-                <&macro_tap &kp A>,          
+                <&macro_tap &kp A &kp E>,          //ÆææÆ
                 <&macro_release &kp RGUI>;
         };   
         ae_u: ae_upper {               
