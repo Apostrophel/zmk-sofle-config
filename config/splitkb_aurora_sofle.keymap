@@ -156,7 +156,7 @@
                 <&macro_press &kp RGUI>,
                 <&macro_tap &kp O>,          
                 <&macro_release &kp RGUI>,
-                <&macro_tap &SLASH>,
+                <&macro_tap &kp SLASH>;
         };   
         oo_u: oo_upper {               
             compatible = "zmk,behavior-macro"; 
