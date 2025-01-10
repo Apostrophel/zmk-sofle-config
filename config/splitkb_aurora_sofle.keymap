@@ -122,7 +122,7 @@
         };
 
         //Macros for norwegian letters å,ø,æ also upper case 
-        aa: aa_lower {                                                   //å
+        aa_l: aa_lower {                                                   
             compatible = "zmk,behavior-macro"; 
             #binding-cells = <0>;
             bindings =
@@ -130,7 +130,7 @@
                 <&macro_tap &kp A &kp O>,          
                 <&macro_release &kp RGUI>;
         };   
-        AA: aa_upper {                                                    //Å
+        aa_u: aa_upper {                                                    
             compatible = "zmk,behavior-macro"; 
             #binding-cells = <0>;
             bindings =
@@ -143,12 +143,12 @@
         aa_nor: norwegian_aa {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&aa>, <&AA>;
+            bindings = <&aa_l>, <&aa_u>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
         // øØ
-        oo: oo_lower {               //
+        oo_l: oo_lower {               
             compatible = "zmk,behavior-macro"; 
             #binding-cells = <0>;
             bindings =
@@ -156,7 +156,7 @@
                 <&macro_tap &kp O &kp SLASH>,          
                 <&macro_release &kp RGUI>;
         };   
-        OO: oo_upper {               //Ø
+        oo_u: oo_upper {               
             compatible = "zmk,behavior-macro"; 
             #binding-cells = <0>;
             bindings =
@@ -170,12 +170,12 @@
         oo_nor: norwegian_oo {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&oo>, <&OO>;
+            bindings = <&oo_l>, <&oo_u>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
         // ae
-        ae: ae_lower {               //
+        ae_l: ae_lower {               
             compatible = "zmk,behavior-macro"; 
             #binding-cells = <0>;
             bindings =
@@ -183,7 +183,7 @@
                 <&macro_tap &kp A>,          
                 <&macro_release &kp RGUI>;
         };   
-        AE: ae_upper {               //Ø
+        ae_u: ae_upper {               
             compatible = "zmk,behavior-macro"; 
             #binding-cells = <0>;
             bindings =
@@ -194,10 +194,10 @@
                 <&macro_release &kp LSHFT>,
                 <&macro_release &kp RGUI>;
         };   
-        oo_nor: norwegian_oo {
+        ae_nor: norwegian_ae {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&oo>, <&OO>;
+            bindings = <&ae_l>, <&ae_u>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
         
@@ -259,7 +259,7 @@
 &to 0      &kp F1       &kp F2  &kp F3      &kp F4       &kp F5                       &kp F6    &kp F7    &kp F8    &kp F9    &kp F10   &kp F11   
 &kp PIPE   &kp EXCL     &kp DQT &kp HASH    &kp DOLLAR   &kp PRCNT                    &kp AMPS  &kp CARET &kp QMARK &kp SQT   &aa_nor   &kp F12
 &none      &kp TILDE    &kp LT  &kp LBRC    &kp LPAR     &kp LBKT                     &kp RBKT  &kp RPAR  &kp RBRC  &kp GT    &kp EQUAL &kp INS
-&none      &none        &kp AT  &none       &kp MINUS    &kp BSLH   &trans   &trans   &kp FSLH  &kp PLUS  &kp STAR  &none     &none     &kp PSCRN
+&none      &none        &kp AT  &none       &kp MINUS    &kp BSLH   &trans   &trans   &kp FSLH  &kp PLUS  &kp STAR  &oo_nor   &ae_nor   &kp PSCRN
                         &trans  &trans      &trans       &kp SPACE  &to 0    &kp RET  &kp BSPC  &trans    &trans    &trans
             >;
 
