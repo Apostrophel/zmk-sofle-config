@@ -100,6 +100,14 @@
             bindings = <&mmv MOVE_LEFT>, <&mmv MOVE_RIGHT>;
             tap-ms = <20>;  
         };
+
+        mouse_move_morph: mouse_morph {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&mouse_move_y>, <&mouse_move_x>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        
         mouse_scroll_x: mouse_scroll_x {
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
@@ -204,13 +212,7 @@
         };
         
 
-        //mod morph for norwegian layout
-        dotcolon: dot_colon {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp DOT>, <&kp COLON>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
+
         commasemi: comma_semi {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
@@ -278,17 +280,17 @@
                     &trans           &trans       &trans            &trans  &to 0      &kp RET    &trans     &trans    &trans    &mmv MOVE_LEFT
              >;
 
-            sensor-bindings = <&mouse_move_x &mouse_move_y>;  //TODO: add mod morph for shift swap xy
+            sensor-bindings = <&mouse_move_x &mouse_morph>;  //TODO: add mod morph for shift swap xy
         };
 
         numpad_layer { //Layer3
             bindings = <
 
-&to 0       &none  &none   &none     &none         &bt BT_CLR_ALL             &kp KP_NLCK &kp DEL    &kp FSLH   &kp STAR    &kp MINUS   &to 0 
-&none       &none  &none   &none     &bt BT_CLR    &none                      &kp PG_UP   &kp KP_N7  &kp KP_N8  &kp KP_N9   &kp PLUS    &none
-&bt BT_PRV  &bt3   &bt2    &bt1      &bt0          &bt BT_NXT                 &kp PG_DN   &kp KP_N4  &kp KP_N5  &kp KP_N6   &kp RET     &none
-&none       &none  &none   &none     &none         &none    &none   &none     &none       &kp KP_N1  &kp KP_N2  &kp KP_N3   &none       &none
-                   &trans  &trans    &trans        &to 0    &trans  &trans    &trans      &kp KP_N0  &to 0      &none
+&to 0       &out OUT_USB  &out OUT_BLE  &none     &none         &bt BT_CLR_ALL             &kp KP_NLCK &kp DEL    &kp FSLH   &kp STAR    &kp MINUS   &to 0 
+&none       &out OUT_TOG  &none         &none     &bt BT_CLR    &none                      &kp PG_UP   &kp KP_N7  &kp KP_N8  &kp KP_N9   &kp PLUS    &none
+&bt BT_PRV  &bt3          &bt2          &bt1      &bt0          &bt BT_NXT                 &kp PG_DN   &kp KP_N4  &kp KP_N5  &kp KP_N6   &kp RET     &none
+&none       &none         &none         &none     &none         &none    &none   &none     &none       &kp KP_N1  &kp KP_N2  &kp KP_N3   &none       &none
+                          &trans        &trans    &trans        &to 0    &trans  &trans    &trans      &kp KP_N0  &to 0      &none
             >;
 
             sensor-bindings = <&inc_dec_kp C_BRI_UP C_BRI_DN &mouse_scroll_x>; 
