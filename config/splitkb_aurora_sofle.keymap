@@ -102,12 +102,12 @@
             tap-ms = <20>;  
         };
 
-        mouse_move_morph: mouse_morph {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&mouse_move_y>, <&mouse_move_x>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
+        // mouse_move_morph: mouse_morph {
+        //     compatible = "zmk,behavior-mod-morph";
+        //     #binding-cells = <0>;
+        //     bindings = <&mouse_move_y>, <&mouse_move_x>;
+        //     mods = <(MOD_LSFT|MOD_RSFT)>;
+        // };
         
         mouse_scroll_x: mouse_scroll_x {
             compatible = "zmk,behavior-sensor-rotate";
@@ -281,7 +281,7 @@
                     &trans           &trans       &trans            &trans  &to 0      &kp RET    &trans     &trans    &trans    &mmv MOVE_LEFT
              >;
 
-            sensor-bindings = <&mouse_move_x &mouse_morph>;  //TODO: add mod morph for shift swap xy
+            sensor-bindings = <&mouse_move_x &mouse_move_y>;  //TODO: add mod morph for shift swap xy
         };
 
         numpad_layer { //Layer3
@@ -322,6 +322,8 @@
 
              sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_UP PG_DN>;
         };
+    };
+};
 
 //         dvorak_layer { //LayerX
 //             bindings = <
@@ -349,8 +351,6 @@
 //
 //              sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_UP PG_DN>;
 //         };
-    };
-};
 
 
 //         symbols_layer { //Layer1  //split separated symbols
