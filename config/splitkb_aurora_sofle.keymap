@@ -264,7 +264,7 @@
 &to 0      &kp F1    &kp F2    &kp F3      &kp F4       &kp F5                            &kp F6      &kp F7    &kp F8    &kp F9     &kp F10    &kp F11  
 &none      &aa_nor   &kp PRCNT &kp LT      &kp GT       &kp DQT                           &kp SQT     &kp LBKT  &kp RBKT  &kp AMPS   &kp CARET  &kp F12
 &none      &ae_nor   &kp EXCL  &kp MINUS   &kp PLUS     &kp EQUAL                         &kp PIPE    &kp LPAR  &kp RPAR  &kp QMARK  &kp COLON  &kp INS
-&none      &oo_nor   &kp AT    &kp FLSH    &kp STAR     &kp BSLH   &mkp RCLK  &mkp LCLK   &kp TILDE   &kp LBRC  &kp RBRC  &kp AT     &kp SEMI   &kp PSCRN
+&none      &oo_nor   &kp AT    &kp FLSH    &kp STAR     &kp BSLH   &none      &none       &kp TILDE   &kp LBRC  &kp RBRC  &kp AT     &kp SEMI   &kp PSCRN
                      &trans    &trans      &trans       &kp SPACE  &to 0      &kp RET     &kp BSPC    &trans    &trans    &trans
             >;
 
