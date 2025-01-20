@@ -260,20 +260,20 @@
             bindings = <
 
 &to 0      &kp F1    &kp F2     &kp F3      &kp F4       &kp F5                            &kp F6      &kp F7    &kp F8    &kp F9     &kp F10    &kp F11  
-&none      &none     &kp PRCNT  &kp LT      &kp GT       &kp DQT                           &kp SQT     &kp LBKT  &kp RBKT  &kp AMPS   &kp CARET  &kp F12
-&none      &none     &kp EXCL   &kp MINUS   &kp PLUS     &kp EQUAL                         &kp PIPE    &kp LPAR  &kp RPAR  &kp QMARK  &kp COLON  &kp INS
-&none      &none     &kp DOLLAR &kp FSLH    &kp STAR     &kp BSLH   &none      &none       &kp TILDE   &kp LBRC  &kp RBRC  &kp AT     &kp SEMI   &kp PSCRN
+&none      &kp HASH  &kp DQT    &kp LT      &kp GT       &kp PRCNT                         &kp CARET   &kp LBKT  &kp RBKT  &kp SQT    &kp AMPS   &kp F12
+&none      &none     &kp EXCL   &kp MINUS   &kp PLUS     &kp EQUAL                         &kp PIPE    &kp LPAR  &kp RPAR  &kp QMARK  &kp COLON  &kp PSCRN
+&none      &none     &kp DOLLAR &kp FSLH    &kp STAR     &kp BSLH   &none      &none       &kp TILDE   &kp LBRC  &kp RBRC  &kp AT     &kp SEMI   &none
                      &trans     &trans      &trans       &kp SPACE  &to 0      &kp RET     &kp BSPC    &trans    &trans    &trans
             >;
 
-            sensor-bindings = <&history_scroll &mouse_scroll_x>;
+            sensor-bindings = <&history_scroll &mouse_scroll_x>; //test: &&&%%%%
         };      
 
 
         navigation_layer { //Layer2
             bindings = <
 
-&to 0      &none    &none            &none        &none             &none                         &none      &mkp LCLK &mkp MCLK &mkp RCLK    &none           &none
+&to 0      &none    &none            &none        &none             &none                         &none      &mkp LCLK &mkp MCLK &mkp RCLK    &kp INS           &none
 &none      &none    &kp LS(LG(LEFT)) &kp LG(UP)   &kp LS(LG(RIGHT)) &none                         &none      &mkp LCLK &kp UP    &mkp RCLK    &none           &none
 &kp LSHFT  &none    &kp LG(LEFT)     &kp LG(DOWN) &kp LG(RIGHT)     &none                         &kp PG_UP  &kp LEFT  &kp DOWN  &kp RIGHT    &mmv MOVE_UP    &none
 &kp LCTRL  &none    &kp LA(LEFT)     &kp LA(DOWN) &kp LA(RIGHT)     &none   &mkp RCLK  &mkp LCLK  &kp PG_DN  &kp HOME  &kp END   &none        &mmv MOVE_DOWN  &mmv MOVE_RIGHT
