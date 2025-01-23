@@ -239,20 +239,34 @@
         };
     };
 
+    combos {
+        compatible = "zmk,combos";
+        combo_test {
+            timeout-ms = <50>;
+            layers = <0>;
+            key-positions = <13 14>;
+            bindings = <&kp A>;
+        };
+        combo_apostrophe {
+            timeout-ms = <50>;
+            layers = <0>;
+            key-positions = <19 21>;
+            bindings = <&kp APOS>
+        };
+    };
+    
     keymap {
         compatible = "zmk,keymap";
 
         base_layer { //Layer0
             bindings = <
 
-
 &kp ESC         &kp N1 &kp N2    &kp N3   &kp N4        &kp N5                                   &kp N6         &kp N7  &kp N8     &kp N9    &kp N0     &kp DEL
 &kp TAB         &kp Q  &kp W     &kp E    &kp R         &kp T                                    &kp Y          &kp U   &kp I      &kp O     &kp P      &kp GRAVE
 &mt LSHFT CAPS  &kp A  &kp S     &kp D    &kp F         &kp G                                    &kp H          &kp J   &kp K      &kp L     &starapo   &kp RSHFT
 &kp LCTRL       &kp Z  &kp X     &kp C    &kp V         &kp B         &kp C_MUTE      &kp K_PP   &kp N          &kp M   &commasemi &dotcolon &minuscore &kp LCTRL
                        &kp LGUI  &kp LALT &mo_tog 3 3   &lt 1 SPACE   &mo_tog 2 2     &lt 2 RET  &lt 1 BSPC     &mo 4   &kp RALT   &kp RGUI
-            >;                                                                                   //hold_tm 1 1
-
+            >;                                                                                   
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &mouse_scroll_x>;
         };                  
 
@@ -265,10 +279,8 @@
 &none      &none     &kp DOLLAR &kp FSLH    &kp STAR     &kp BSLH   &none      &none       &kp TILDE   &kp LBRC  &kp RBRC  &kp AT     &kp SEMI   &none
                      &trans     &trans      &trans       &kp SPACE  &to 0      &kp RET     &kp BSPC    &trans    &trans    &trans
             >;
-
-            sensor-bindings = <&history_scroll &mouse_scroll_x>; //test: &&&%%%%
+            sensor-bindings = <&history_scroll &mouse_scroll_x>; 
         };      
-
 
         navigation_layer { //Layer2
             bindings = <
@@ -279,7 +291,6 @@
 &kp LCTRL  &none    &kp LA(LEFT)     &kp LA(DOWN) &kp LA(RIGHT)     &none   &mkp RCLK  &mkp LCLK  &kp PG_DN  &kp HOME  &kp END   &none        &mmv MOVE_DOWN  &mmv MOVE_RIGHT
                     &trans           &trans       &trans            &trans  &to 0      &kp RET    &trans     &trans    &trans    &mmv MOVE_LEFT
              >;
-
             sensor-bindings = <&mouse_move_x &mouse_move_y>;  //TODO: add mod morph for shift swap xy
         };
 
@@ -290,9 +301,8 @@
 &none       &none  &none   &none     &bt BT_CLR    &none                      &kp PG_UP   &kp KP_N7  &kp KP_N8  &kp KP_N9   &kp PLUS    &none
 &bt BT_PRV  &bt3   &bt2    &bt1      &bt0          &bt BT_NXT                 &kp PG_DN   &kp KP_N4  &kp KP_N5  &kp KP_N6   &kp RET     &none
 &none       &none  &none   &none     &none         &none    &none   &none     &none       &kp KP_N1  &kp KP_N2  &kp KP_N3   &none       &none
-                   &trans  &trans    &trans        &to 0    &trans  &trans    &trans      &kp KP_N0  &to 0      &none
+                   &trans  &trans    &trans        &to 0    &trans  &trans    &trans      &kp KP_N0  &kp KP_DOT &none
             >;
-
             sensor-bindings = <&inc_dec_kp C_BRI_UP C_BRI_DN &mouse_scroll_x>; 
         };
 
