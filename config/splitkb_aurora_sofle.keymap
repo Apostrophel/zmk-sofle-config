@@ -251,7 +251,7 @@
             timeout-ms = <50>;
             layers = <0>;
             key-positions = <19 21>;
-            bindings = <&kp APOS>
+            bindings = <&kp APOS>;
         };
     };
     
