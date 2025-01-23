@@ -241,17 +241,17 @@
 
     combos {
         compatible = "zmk,combos";
-        combo_test {
+        combo_quote {
             timeout-ms = <50>;
             layers = <0>;
-            key-positions = <13 14>;
-            bindings = <&kp A>;
+            key-positions = <27 28>;
+            bindings = <&kp DOUBLE_QUOTES>;
         };
         combo_apostrophe {
             timeout-ms = <50>;
             layers = <0>;
-            key-positions = <19 21>;
-            bindings = <&kp APOS>;
+            key-positions = <31 32>;
+            bindings = <&kp APOSTROPHE>;
         };
     };
     
