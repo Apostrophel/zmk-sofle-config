@@ -243,15 +243,27 @@
         compatible = "zmk,combos";
         combo_quote {
             timeout-ms = <50>;
-            layers = <0>;
+            layers = <0 1>;
             key-positions = <27 28>;          //df
             bindings = <&kp DOUBLE_QUOTES>;
         };
         combo_apostrophe {
             timeout-ms = <50>;
-            layers = <0>;
+            layers = <0 1>;
             key-positions = <31 32>;          //jk
             bindings = <&kp APOSTROPHE>;
+        };
+        combo_parantesis_open {
+            timeout-ms = <50>;
+            layers = <0 1>
+            key-positions = <15 16>;
+            bondings = <&kp LPAR>;
+        };
+        combo_parantesis_close {
+            timeout-ms = <50>;
+            layers = <0 1>
+            key-positions = <19 20>;
+            bondings = <&kp RPAR>;
         };
     };
     
@@ -309,10 +321,10 @@
         macro_layer { //Layer4                              
             bindings = <
 
-&to 0    &none  &none  &none  &kp LA(F4)  &none                     &none  &none        &none    &none   &soft_off   &sys_reset
-&to 5    &none  &none  &none  &none       &none                     &none  &none        &none    &none   &none       &none
-&none    &none  &none  &none  &none       &none                     &none  &kp LA(F10)  &none    &none   &none       &none
-&none    &none  &none  &none  &none       &none    &none   &none    &none  &none        &none    &none   &none       &none
+&to 0    &none  &none  &none  &kp LA(F4)  &none                     &none  &none        &none    &none   &none   &sys_reset
+&to 5    &kp N1 &kp N2 &kp N3 &kp N4      &kp N5                    &kp N6 &kp N7       &kp N8   &kp N9  &kp N0  &soft_off
+&none    &none  &none  &none  &none       &none                     &none  &kp LA(F10)  &none    &none   &none   &none
+&none    &none  &none  &none  &none       &none    &none   &none    &none  &none        &none    &none   &none   &none
                 &none  &none  &none       &none    &none   &none    &none  &none        &to 3    &none
             >;
 
