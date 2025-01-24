@@ -253,18 +253,18 @@
             key-positions = <31 32>;          //jk
             bindings = <&kp APOSTROPHE>;
         };
-        combo_parantesis_open {
-            timeout-ms = <50>;
-            layers = <0 1>;
-            key-positions = <15 16>;
-            bindings = <&kp LPAR>;
-        };
-        combo_parantesis_close {
-            timeout-ms = <50>;
-            layers = <0 1>;
-            key-positions = <19 20>;
-            bindings = <&kp RPAR>;
-        };
+        // combo_parantesis_open {
+        //     timeout-ms = <50>;
+        //     layers = <0 1>;
+        //     key-positions = <15 16>;
+        //     bindings = <&kp LPAR>;
+        // };
+        // combo_parantesis_close {
+        //     timeout-ms = <50>;
+        //     layers = <0 1>;
+        //     key-positions = <19 20>;
+        //     bindings = <&kp RPAR>;
+        // };
     };
     
     keymap {
@@ -338,7 +338,7 @@
 &kp TAB     &kp Q  &kp W     &kp E    &kp R     &kp T                                &kp Y      &kp U   &kp I      &kp O     &kp P      &kp GRAVE
 &kp LSHFT   &kp A  &kp S     &kp D    &kp F     &kp G                                &kp H      &kp J   &kp K      &kp L     &starapo   &kp RSHFT
 &kp LCTRL   &kp Z  &kp X     &kp C    &kp V     &kp B        &kp C_MUTE   &kp K_PP   &kp N      &kp M   &commasemi &dotcolon &minuscore &kp LCTRL
-                   &kp LGUI  &kp LALT &kp N6    &kp SPACE    &kp RET      &kp RET    &kp BSPC   &mo 4   &kp RALT   &kp RGUI
+                   &kp N7    &kp N8   &kp N9    &kp SPACE    &kp RET      &kp RET    &kp BSPC   &mo 4   &kp RALT   &kp RGUI
             >;   
 
              sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_UP PG_DN>;
