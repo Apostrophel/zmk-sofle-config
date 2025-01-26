@@ -253,18 +253,18 @@
             key-positions = <31 32>;          //jk
             bindings = <&kp APOSTROPHE>;
         };
-        // combo_parantesis_open {
-        //     timeout-ms = <50>;
-        //     layers = <0 1>;
-        //     key-positions = <15 16>;
-        //     bindings = <&kp LPAR>;
-        // };
-        // combo_parantesis_close {
-        //     timeout-ms = <50>;
-        //     layers = <0 1>;
-        //     key-positions = <19 20>;
-        //     bindings = <&kp RPAR>;
-        // };
+        combo_parantesis_open {
+            timeout-ms = <50>;
+            layers = <0 1>;
+            key-positions = <28 29>;
+            bindings = <&kp LPAR>;
+        };
+        combo_parantesis_close {
+            timeout-ms = <50>;
+            layers = <0 1>;
+            key-positions = <30 31>;
+            bindings = <&kp RPAR>;
+        };
     };
     
     keymap {
