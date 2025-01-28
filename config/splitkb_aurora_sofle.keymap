@@ -282,13 +282,13 @@
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &mouse_scroll_x>;
         };                  
 
-        symbols_layer { //Layer1  
+        symbols_layer { //Layer1  /\/\////\\//\\//\\///\\
             bindings = <
 
 &to 0      &kp F1    &kp F2     &kp F3      &kp F4       &kp F5                            &kp F6      &kp F7    &kp F8    &kp F9     &kp F10    &kp F11  
-&none      &kp HASH  &kp DQT    &kp LT      &kp GT       &kp PRCNT                         &kp CARET   &kp LBKT  &kp RBKT  &kp SQT    &kp AMPS   &kp F12
-&none      &none     &kp EXCL   &kp MINUS   &kp PLUS     &kp EQUAL                         &kp PIPE    &kp LPAR  &kp RPAR  &kp QMARK  &kp COLON  &kp PSCRN
-&none      &none     &kp DOLLAR &kp FSLH    &kp STAR     &kp BSLH   &none      &none       &kp TILDE   &kp LBRC  &kp RBRC  &kp AT     &kp SEMI   &none
+&none      &kp HASH  &kp DQT    &kp LT      &kp GT       &kp PRCNT                         &kp CARET   &kp LBKT  &kp RBKT  &kp SQT    &kp AMPS   &none
+&none      &none     &kp EXCL   &kp FSLH    &kp BSLH     &kp EQUAL                         &kp PIPE    &kp LPAR  &kp RPAR  &kp QMARK  &kp COLON  &none 
+&none      &none     &kp DOLLAR &kp MINUS   &kp PLUS     &kp STAR   &none      &none       &kp TILDE   &kp LBRC  &kp RBRC  &kp AT     &kp SEMI   &kp F12
                      &trans     &trans      &trans       &kp SPACE  &to 0      &kp RET     &kp BSPC    &trans    &trans    &trans
             >;
             sensor-bindings = <&history_scroll &mouse_scroll_x>; 
@@ -297,11 +297,11 @@
         navigation_layer { //Layer2
             bindings = <
 
-&to 0      &none    &none            &kp LA(UP)   &none             &none                         &none      &mkp LCLK &mkp MCLK &mkp RCLK    &kp INS           &none
-&none      &none    &kp LS(LG(LEFT)) &kp LG(UP)   &kp LS(LG(RIGHT)) &none                         &none      &mkp LCLK &kp UP    &mkp RCLK    &none           &none
-&kp LSHFT  &none    &kp LG(LEFT)     &kp LG(DOWN) &kp LG(RIGHT)     &none                         &kp PG_UP  &kp LEFT  &kp DOWN  &kp RIGHT    &mmv MOVE_UP    &none
-&kp LCTRL  &none    &kp LA(LEFT)     &kp LA(DOWN) &kp LA(RIGHT)     &none   &mkp RCLK  &mkp LCLK  &kp PG_DN  &kp HOME  &kp END   &none        &mmv MOVE_DOWN  &mmv MOVE_RIGHT
-                    &trans           &trans       &trans            &trans  &to 0      &kp RET    &trans     &trans    &trans    &mmv MOVE_LEFT
+&to 0      &none    &none            &kp LA(UP)   &none             &none                         &kp PSCRN  &none     &kp LC(LA(UP))    &none       &kp INS &kp DEL
+&none      &none    &kp LS(LG(LEFT)) &kp LG(UP)   &kp LS(LG(RIGHT)) &none                         &kp PG_UP  &kp HOME  &kp UP            &kp END     &none   &none
+&kp LSHFT  &none    &kp LG(LEFT)     &kp LG(DOWN) &kp LG(RIGHT)     &none                         &kp PG_DN  &kp LEFT  &kp DOWN          &kp RIGHT   &none   &none
+&kp LCTRL  &none    &kp LA(LEFT)     &kp LA(DOWN) &kp LA(RIGHT)     &none   &mkp RCLK  &mkp LCLK  &none      &none     &kp LC(LA(DOWN))  &none       &none   &none
+                    &trans           &trans       &trans            &trans  &to 0      &kp RET    &trans     &trans    &trans            &none
              >;
             sensor-bindings = <&mouse_move_x &mouse_move_y>;  //TODO: add mod morph for shift swap xy
         };
@@ -309,7 +309,7 @@
         numpad_layer { //Layer3
             bindings = <
 
-&to 0       &none  &none   &none     &none         &bt BT_CLR_ALL             &kp KP_NLCK &kp DEL    &kp FSLH   &kp STAR    &kp MINUS   &to 0 
+&to 0       &none  &none   &none     &none         &bt BT_CLR_ALL             &kp KP_NLCK &kp DEL    &kp FSLH   &kp STAR    &kp MINUS   &none
 &none       &none  &none   &none     &bt BT_CLR    &none                      &kp PG_UP   &kp KP_N7  &kp KP_N8  &kp KP_N9   &kp PLUS    &none
 &bt BT_PRV  &bt3   &bt2    &bt1      &bt0          &bt BT_NXT                 &kp PG_DN   &kp KP_N4  &kp KP_N5  &kp KP_N6   &kp RET     &none
 &none       &none  &none   &none     &none         &none    &none   &none     &none       &kp KP_N1  &kp KP_N2  &kp KP_N3   &none       &none
