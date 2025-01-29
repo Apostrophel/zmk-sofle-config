@@ -282,7 +282,7 @@
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &mouse_scroll_x>;
         };                  
 
-        symbols_layer { //Layer1  /\/\////\\//\\//\\///\\
+        symbols_layer { //Layer1
             bindings = <
 
 &to 0      &kp F1    &kp F2     &kp F3      &kp F4       &kp F5                            &kp F6      &kp F7    &kp F8    &kp F9     &kp F10    &kp F11  
@@ -291,7 +291,7 @@
 &none      &none     &kp DOLLAR &kp MINUS   &kp PLUS     &kp STAR   &none      &none       &kp TILDE   &kp LBRC  &kp RBRC  &kp AT     &kp SEMI   &kp F12
                      &trans     &trans      &trans       &kp SPACE  &to 0      &kp RET     &kp BSPC    &trans    &trans    &trans
             >;
-            sensor-bindings = <&history_scroll &mouse_scroll_x>; 
+            sensor-bindings = <&history_scroll &history_scroll>; 
         };      
 
         navigation_layer { //Layer2
