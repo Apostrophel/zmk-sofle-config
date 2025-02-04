@@ -330,7 +330,7 @@
     
     
     keymap {
-        compatible = "zmk,keymap"
+        compatible = "zmk,keymap";
 
         base_layer { //Layer0
             bindings = <
