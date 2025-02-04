@@ -305,6 +305,18 @@
             key-positions = <31 34>; // af
             bindings = <&kp BSLH>;
         };
+        combo_curl_open {
+            timeout-ms = <50>;
+            layers = <0 1>;
+            key-positions = <38 40>; //xv
+            bindings = <&kp LBRC>;
+        };
+        combo_curl_close {
+            timeout-ms = <50>;
+            layers = <0 1>;
+            key-positions = <43 45>; //.m
+            bindings = <&kp RBRC>;
+        };
     };
     
     
