@@ -12,10 +12,12 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/ext_power.h>
 
-#define KEYS_L 0 1 2 3 4  5  12 13 14 15 16 17 24 25 26 27 28 29 36 37 38 39 40 41 48 49 50 51 52    // Left-hand keys.
-#define KEYS_R 6 7 8 9 10 11 18 19 20 21 22 23 30 31 32 33 34 35 42 43 44 45 46 47 53 54 55 56 57     // Right-hand keys.
-#define THUMBS 48 49 50 52 53 54 55 56 57     // Thumb keys.
 
+#define BASE 0
+#define SYM 1
+#define NAV 2
+#define NUM 3
+#define MAC 4
 
 // Mouse and rotary redefinition:
 #define ZMK_POINTING_DEFAULT_MOVE_VAL 5000   // default: 600
@@ -345,14 +347,14 @@
     keymap {
         compatible = "zmk,keymap";
 
-        base_layer { //Layer0     
+        base_layer { //Layer0  
             bindings = <
 
-&none       &kp N1  &kp N2      &kp N3      &kp N4      &kp N5                                    &kp N6      &kp N7      &kp N8      &kp N9        &kp N0      &kp F4
-&kp ESC     &kp Q   &kp W       &kp E       &kp R       &kp T                                     &kp Y       &kp U       &kp I       &kp O         &kp P       &kp DEL
-&kp TAB     &kp A   &hm LGUI S  &hm LALT D  &hm LCTRL F &kp G                                     &kp H       &hm RCTRL J &hm RALT K  &hm RGUI L   &kp COLON   &kp GRAVE
-&caps_word  &kp Z   &kp X       &kp C       &kp V       &kp B        &kp C_MUTE  &kp K_PP         &kp N       &kp M       &commasemi  &dotcolon     &minuscore  &none
-                    &mo 4       &mo 3       &mo 2       &lt 1 SPACE  &sk LSHIFT  &mt RSHFT ENTER  &lt 1 BSPC  &mo 2       &mo 3       &mo 4
+&kp ESC     &kp N1  &kp N2      &kp N3      &kp N4      &kp N5                                       &kp N6        &kp N7      &kp N8      &kp N9        &kp N0      &kp DEL
+&kp TAB     &kp Q   &kp W       &kp E       &kp R       &kp T                                        &kp Y         &kp U       &kp I       &kp O         &kp P       &kp GRAVE
+&sk LSHFT   &kp A   &hm LGUI S  &hm LALT D  &hm LCTRL F &kp G                                        &kp H         &hm RCTRL J &hm RALT K  &hm RGUI L    &kp COLON   &sk RSHFT
+&caps_word  &kp Z   &kp X       &kp C       &kp V       &kp B          &kp C_MUTE     &kp K_PP       &kp N         &kp M       &commasemi  &dotscolon    &minuscore  &caps_word
+                    &mo MAC     &mo MAC     &mo NUM     &lt SYM SPACE  &lt NAV ENTER  &lt NAV ENTER  &lt SYM BSPC  &mo NUM     &mo MAC     &mo MAC
             >;                                                                                   
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &mouse_scroll_x>;
         };                  
