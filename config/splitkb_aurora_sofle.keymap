@@ -347,13 +347,13 @@
     keymap {
         compatible = "zmk,keymap";
 
-        base_layer { //Layer0  
+        base_layer { //Layer0 
             bindings = <
 
 &kp ESC     &kp N1  &kp N2      &kp N3      &kp N4      &kp N5                                       &kp N6        &kp N7      &kp N8      &kp N9        &kp N0      &kp DEL
-&kp TAB     &kp Q   &kp W       &kp E       &kp R       &kp T                                        &kp Y         &kp U       &kp I       &kp O         &kp P       &kp GRAVE
-&sk LSHFT   &kp A   &hm LGUI S  &hm LALT D  &hm LCTRL F &kp G                                        &kp H         &hm RCTRL J &hm RALT K  &hm RGUI L    &kp COLON   &sk RSHFT
-&caps_word  &kp Z   &kp X       &kp C       &kp V       &kp B          &kp C_MUTE     &kp K_PP       &kp N         &kp M       &commasemi  &dotcolon    &minuscore  &caps_word
+&caps_word  &kp Q   &kp W       &kp E       &kp R       &kp T                                        &kp Y         &kp U       &kp I       &kp O         &kp P       &caps_word
+&kp TAB     &kp A   &hm LGUI S  &hm LALT D  &hm LCTRL F &kp G                                        &kp H         &hm LCTRL J &hm LALT K  &hm LGUI L    &kp COLON   &kp GRAVE
+&sk LSHFT   &kp Z   &kp X       &kp C       &kp V       &kp B          &kp C_MUTE     &kp K_PP       &kp N         &kp M       &commasemi  &dotcolon     &minuscore  &sk RSHFT
                     &mo MAC     &mo MAC     &mo NUM     &lt SYM SPACE  &lt NAV ENTER  &lt NAV ENTER  &lt SYM BSPC  &mo NUM     &mo MAC     &mo MAC
             >;                                                                                   
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &mouse_scroll_x>;
@@ -362,11 +362,11 @@
         symbols_layer { //Layer1
             bindings = <
 
-&to 0      &kp F1    &kp F2     &kp F3      &kp F4       &kp F5                            &kp F6      &kp F7    &kp F8    &kp F9     &kp F10    &kp F11  
-&none      &kp HASH  &kp DQT    &kp LT      &kp GT       &kp PRCNT                         &kp CARET   &kp LBKT  &kp RBKT  &kp SQT    &kp AMPS   &none
-&none      &none     &kp EXCL   &kp FSLH    &kp BSLH     &kp EQUAL                         &kp PIPE    &kp LPAR  &kp RPAR  &kp QMARK  &kp COLON  &none 
-&none      &none     &kp DOLLAR &kp MINUS   &kp PLUS     &kp STAR   &none      &none       &kp TILDE   &kp LBRC  &kp RBRC  &kp AT     &kp SEMI   &kp F12
-                     &trans     &trans      &trans       &kp SPACE  &to 0      &kp RET     &kp BSPC    &trans    &trans    &trans
+&to 0      &kp F1    &kp F2         &kp F3          &kp F4          &kp F5                          &kp F6      &kp F7          &kp F8          &kp F9          &kp F10    &kp F11  
+&none      &kp HASH  &kp DQT        &kp LT          &kp GT          &kp PRCNT                       &kp CARET   &kp LBKT        &kp RBKT        &kp SQT         &kp AMPS   &none
+&none      &none     &hm LGUI EXCL  &hm LALT FSLH   &hm LCTRL BSLH  &kp EQUAL                       &kp PIPE    &hm LCTRL LPAR  &hm LALT RPAR   &hm LGUI QMARK  &kp COLON  &none 
+&none      &none     &kp DOLLAR     &kp MINUS       &kp PLUS        &kp STAR   &none      &none     &kp TILDE   &kp LBRC        &kp RBRC        &kp AT          &kp SEMI   &kp F12
+                     &trans         &trans          &trans          &kp SPACE  &to 0      &kp RET   &kp BSPC    &trans          &trans          &trans
             >;
             sensor-bindings = <&history_scroll &history_scroll>; 
         };      
