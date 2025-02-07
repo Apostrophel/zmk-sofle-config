@@ -268,7 +268,7 @@
 &kp TAB     &kp Q   &kp W       &kp E       &kp R       &kp T                                        &kp Y         &kp U       &kp I       &kp O         &kp P       &kp GRAVE
 &sk LSHFT   &kp A   &hm LGUI S  &hm LALT D  &hm LCTRL F &kp G                                        &kp H         &hm LCTRL J &hm LALT K  &hm LGUI L    &kp COLON   &sk RSHFT
 &caps_word  &kp Z   &kp X       &kp C       &kp V       &kp B          &kp C_MUTE     &kp K_PP       &kp N         &kp M       &commasemi  &dotcolon     &minuscore  &caps_word
-                    &mo MAC     &mo MAC     &mo NUM     &lt SYM SPACE  &lt NAV ENTER  &lt NAV ENTER  &lt SYM BSPC  &mo NUM     &mo MAC     &mo MAC
+                    &mo BLU     &mo MAC     &mo NUM     &lt SYM SPACE  &lt NAV ENTER  &lt NAV ENTER  &lt SYM BSPC  &mo NUM     &mo MAC     &mo BLU
             >;                                                                                   
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &mouse_scroll_x>;
         };                  
