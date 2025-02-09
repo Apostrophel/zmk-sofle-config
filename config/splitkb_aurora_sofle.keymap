@@ -326,34 +326,34 @@
             bindings = <
 
 &kp ESC     &kp N1      &kp N2  &kp N3   &kp N4     &kp N5                              &kp N6    &kp N7  &kp N8     &kp N9    &kp N0     &to BASE
-&kp TAB     &kp T       &kp Q   &kp W    &kp E      &kp R                               &kp Y     &kp U   &kp I      &kp O     &kp P      &kp GRAVE
-&kp LSHIFT  &lt GAR G   &kp A   &kp S    &kp D      &kp F                               &kp H     &kp J   &kp K      &kp L     &kp STAR   &kp RSHFT
-&kp LCTRL   &kp B       &kp Z   &kp X    &kp C      &kp V        &kp C_MUTE    &none    &kp N     &kp M   &kp COMMA  &kp DOT   &kp MINUS  &kp LCTRL
-                        &kp N6  &kp N7   &kp LALT   &kp SPACE    &lt GAR RET   &tog GAT &kp BSPC  &none   &none      &none
+&kp T       &kp TAB     &kp Q   &kp W    &kp E      &kp R                               &kp Y     &kp U   &kp I      &kp O     &kp P      &kp GRAVE
+&lt GAR G   &kp LSHIFT  &kp A   &kp S    &kp D      &kp F                               &kp H     &kp J   &kp K      &kp L     &kp STAR   &kp RSHFT
+&kp B       &kp LCTRL   &kp Z   &kp X    &kp C      &kp V        &kp C_MUTE    &none    &kp N     &kp M   &kp COMMA  &kp DOT   &kp MINUS  &kp LCTRL
+                        &kp N6  &kp N7   &kp LALT   &kp SPACE    &lt GAR RET   &kp RET  &kp BSPC  &none   &none      &to GAT
             >;   
-             sensor-bindings = <&mouse_scroll_x &mouse_scroll_x>;
+             sensor-bindings = <&mouse_scroll_x &inc_dec_kp C_VOL_DN C_VOL_UP>;
         };
 
         gaming_layer_raise { //Layer 6 - GAR 
             bindings = <
 
-&kp ESC     &kp F1   &kp F2    &kp F3   &kp F4    &kp F5                             &kp N6    &kp N7  &kp N8     &kp N9    &kp N0     &to BASE
-&kp TAB     &kp O    &kp Y     &kp W    &kp U     &kp I                              &kp Y     &kp U   &kp I      &kp O     &kp P      &kp GRAVE
-&kp LSHIFT  &to GAM  &kp A     &kp S    &kp D     &kp P                              &kp H     &kp J   &kp K      &kp L     &kp STAR   &kp RSHFT
-&kp LCTRL   &kp N0   &kp K     &kp L    &kp N     &kp M      &kp C_MUTE    &none     &kp N     &kp M   &kp COMMA  &kp DOT   &kp MINUS  &kp LCTRL
-                     &kp N6    &kp N7   &kp LALT  &kp SPACE  &kp RET       &tog GAT  &none     &none   &none   &none
+&kp ESC     &kp F1      &kp F2    &kp F3   &kp F4    &kp F5                         &kp N6    &kp N7  &kp N8     &kp N9    &kp N0     &to BASE
+&kp O       &kp TAB     &kp Y     &kp W    &kp U     &kp I                          &kp Y     &kp U   &kp I      &kp O     &kp P      &kp GRAVE
+&to GAM     &kp LSHIFT  &kp A     &kp S    &kp D     &kp P                          &kp H     &kp J   &kp K      &kp L     &kp STAR   &kp RSHFT
+&kp N0      &kp LCTRL   &kp K     &kp L    &kp N     &kp M      &kp C_MUTE  &none   &kp N     &kp M   &kp COMMA  &kp DOT   &kp MINUS  &kp LCTRL
+                        &kp N6    &kp N7   &kp LALT  &kp SPACE  &kp RET     &kp RET &none     &none   &none      &to GAT
             >;   
-             sensor-bindings = <&mouse_scroll_x &mouse_scroll_x>;
+             sensor-bindings = <&mouse_scroll_x &inc_dec_kp C_VOL_DN C_VOL_UP>;
         };
          
         gaming_layer_type { //Layer 7  - GAT 
             bindings = <
 
-&kp ESC     &kp N1  &kp N2      &kp N3      &kp N4      &kp N5                                  &kp N6        &kp N7      &kp N8      &kp N9        &kp N0      &kp DEL
-&kp TAB     &kp Q   &kp W       &kp E       &kp R       &kp T                                   &kp Y         &kp U       &kp I       &kp O         &kp P       &kp GRAVE
-&sk LSHFT   &kp A   &kp S       &kp D       &kp F       &kp G                                   &kp H         &kp J       &kp K       &kp L         &kp COLON   &sk RSHFT
-&caps_word  &kp Z   &kp X       &kp C       &kp V       &kp B          &kp C_MUTE     &kp K_PP  &kp N         &kp M       &commasemi  &dotcolon     &minuscore  &caps_word
-                    &none       &none       &none       &lt SYM SPACE  &lt NAV ENTER  &to GAM   &lt SYM BSPC  &none       &none       &none
+&kp ESC     &kp N1  &kp N2      &kp N3      &kp N4      &kp N5                                      &kp N6        &kp N7      &kp N8      &kp N9        &kp N0      &kp DEL
+&kp TAB     &kp Q   &kp W       &kp E       &kp R       &kp T                                       &kp Y         &kp U       &kp I       &kp O         &kp P       &kp GRAVE
+&sk LSHFT   &kp A   &kp S       &kp D       &kp F       &kp G                                       &kp H         &kp J       &kp K       &kp L         &kp COLON   &sk RSHFT
+&caps_word  &kp Z   &kp X       &kp C       &kp V       &kp B          &kp C_MUTE     &kp K_PP      &kp N         &kp M       &commasemi  &dotcolon     &minuscore  &caps_word
+                    &none       &none       &none       &lt SYM SPACE  &lt NAV ENTER  &lt NAV ENTER &lt SYM BSPC  &none       &none       &to GAM
             >;                                                                                   
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &mouse_scroll_x>;
         };          
