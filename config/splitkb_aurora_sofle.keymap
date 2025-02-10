@@ -152,7 +152,30 @@
             bindings = <&kp MINUS>, <&kp UNDERSCORE>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
+        spacectrl: delete_ctrl_shift_space {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp BACKSPACE>, <&kp DEL>;
+            mods = <(MOD_LCTL|MOD_RCTL)>;
+        };
 
+        spaceshift: shift_space_is_backspace { 
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp SPACE>, <&spacectrl>;          
+            mods = <(MOD_LSFT|MOD_RSFT)>;       
+        };
+
+        spacemod: spaceshift_and_layer_hold {           //TODO: see if this works
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick_tap_ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&mo SYM>, <&spaceshift>;
+        };
+
+ 
 
         // lmt: left_hand_mod_tap {
         //     compatible = "zmk,behavior-hold-tap";
@@ -269,8 +292,8 @@
 &kp TAB     &kp Q   &kp W       &kp E       &kp R       &kp T                                        &kp Y         &kp U       &kp I       &kp O         &kp P       &kp GRAVE
 &sk LSHFT   &kp A   &hm LGUI S  &hm LALT D  &hm LCTRL F &kp G                                        &kp H         &hm LCTRL J &hm LALT K  &hm LGUI L    &kp COLON   &sk RSHFT
 &caps_word  &kp Z   &kp X       &kp C       &kp V       &kp B          &kp C_MUTE     &kp K_PP       &kp N         &kp M       &commasemi  &dotcolon     &minuscore  &caps_word
-                    &mo BLU     &mo MAC     &mo NUM     &lt SYM SPACE  &lt NAV ENTER  &lt NAV ENTER  &lt SYM BSPC  &mo NUM     &mo MAC     &mo BLU
-            >;                                                                                   
+                    &mo BLU     &mo MAC     &mo NUM     &spacemod      &lt NAV ENTER  &lt NAV ENTER  &lt SYM BSPC  &mo NUM     &mo MAC     &mo BLU
+            >;                                          //&lt SYM SPACE                                         
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &mouse_scroll_x>;
         };                  
 
