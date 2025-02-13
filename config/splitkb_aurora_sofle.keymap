@@ -166,14 +166,14 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;       
         };
 
-        spacemod: spaceshift_and_layer_hold {           //TODO: see if this works
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            quick_tap_ms = <0>;
-            flavor = "tap-preferred";
-            bindings = <&mo SYM>, <&spaceshift>;
-        };
+        // spacemod: spaceshift_and_layer_hold {           //TODO: see if this works
+        //     compatible = "zmk,behavior-hold-tap";
+        //     #binding-cells = <2>;
+        //     tapping-term-ms = <200>;
+        //     quick_tap_ms = <0>;
+        //     flavor = "tap-preferred";
+        //     bindings = <&mo SYM>, <&spaceshift>;
+        // };
 
  
 
@@ -208,6 +208,8 @@
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         };
+
+
         
     };
 
@@ -280,6 +282,27 @@
         };
 
     };
+
+    macros {
+        comment: vs_code_comment{
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LEFT_CONTROL>
+                , <&macro_tap &kp U &kp C>
+                , <&macro_release &kp LEFT_CONTROL>
+                ;
+        };
+        uncomment: vs_code_uncomment{
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LEFT_CONTROL>
+                , <&macro_tap &kp K &kp U>
+                , <&macro_release &kp LEFT_CONTROL>
+                ;
+        };
+    };
     
     
     keymap {
@@ -292,8 +315,8 @@
 &kp TAB     &kp Q   &kp W       &kp E       &kp R       &kp T                                        &kp Y         &kp U       &kp I       &kp O         &kp P       &kp GRAVE
 &sk LSHFT   &kp A   &hm LGUI S  &hm LALT D  &hm LCTRL F &kp G                                        &kp H         &hm LCTRL J &hm LALT K  &hm LGUI L    &kp COLON   &sk RSHFT
 &caps_word  &kp Z   &kp X       &kp C       &kp V       &kp B          &kp C_MUTE     &kp K_PP       &kp N         &kp M       &commasemi  &dotcolon     &minuscore  &caps_word
-                    &mo BLU     &mo MAC     &mo NUM     &spacemod      &lt NAV ENTER  &lt NAV ENTER  &lt SYM BSPC  &mo NUM     &mo MAC     &mo BLU
-            >;                                          //&lt SYM SPACE                                         
+                    &mo BLU     &mo MAC     &mo NUM     &lt SYM SPACE  &lt NAV ENTER  &lt NAV ENTER  &lt SYM BSPC  &mo NUM     &mo MAC     &mo BLU
+            >;                                                                                  
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &mouse_scroll_x>;
         };                  
 
@@ -312,11 +335,11 @@
         navigation_layer { //Layer 2 - NAV
             bindings = <
 
-&to BASE   &none    &none            &kp LA(UP)   &none             &none                         &kp PSCRN  &none     &kp LC(LA(UP))    &none       &kp INS &kp DEL
-&none      &none    &kp LS(LG(LEFT)) &kp LG(UP)   &kp LS(LG(RIGHT)) &none                         &kp PG_UP  &kp HOME  &kp UP            &kp END     &none   &none
-&kp LSHFT  &none    &kp LG(LEFT)     &kp LG(DOWN) &kp LG(RIGHT)     &none                         &kp PG_DN  &kp LEFT  &kp DOWN          &kp RIGHT   &none   &none
-&kp LCTRL  &none    &kp LA(LEFT)     &kp LA(DOWN) &kp LA(RIGHT)     &none   &mkp RCLK  &mkp LCLK  &none      &none     &kp LC(LA(DOWN))  &none       &none   &none
-                    &trans           &trans       &trans            &trans  &to 0      &kp RET    &trans     &trans    &trans            &none
+&to BASE   &none        &none            &kp LA(UP)   &none             &none                         &kp PSCRN  &none     &kp LC(LA(UP))    &none       &kp INS &kp DEL
+&none      &uncomment   &kp LS(LG(LEFT)) &kp LG(UP)   &kp LS(LG(RIGHT)) &none                         &kp PG_UP  &kp HOME  &kp UP            &kp END     &none   &none
+&kp LSHFT  &comment     &kp LG(LEFT)     &kp LG(DOWN) &kp LG(RIGHT)     &none                         &kp PG_DN  &kp LEFT  &kp DOWN          &kp RIGHT   &none   &none
+&kp LCTRL  &none        &kp LA(LEFT)     &kp LA(DOWN) &kp LA(RIGHT)     &none   &mkp RCLK  &mkp LCLK  &none      &none     &kp LC(LA(DOWN))  &none       &none   &none
+                        &trans           &trans       &trans            &trans  &to 0      &kp RET    &trans     &trans    &trans            &none
              >;
             sensor-bindings = <&mouse_move_x &mouse_move_y>;  //TODO: add mod morph for shift swap xy
         };
