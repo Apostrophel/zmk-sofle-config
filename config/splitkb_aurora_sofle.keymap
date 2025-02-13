@@ -154,12 +154,12 @@
         };
 
 
-        //Super space key nested into spacemod below: tap - space, hold - momentary layer, shift+tap - backspace, shift+alt+tap - delete
+        //Super space key nested into spacemod below: tap - space, hold - momentary layer, shift+tap - backspace, gui+alt+tap - delete
         spacectrl: delete_ctrl_shift_space {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp BACKSPACE>, <&kp DEL>;
-            mods = <(MOD_LALT|MOD_RALT)>;
+            mods = <(MOD_LGUI|MOD_RGUI)>;
         };
 
         spaceshift: shift_space_is_backspace { 
@@ -319,7 +319,7 @@
 &kp LCTRL  &none        &kp LA(LEFT)     &kp LA(DOWN) &kp LA(RIGHT)     &none   &mkp RCLK  &mkp LCLK  &none      &none     &kp LC(LA(DOWN))  &none       &none   &none
                         &trans           &trans       &trans            &trans  &to 0      &kp RET    &trans     &trans    &trans            &none
              >;
-            sensor-bindings = <&mouse_move_x &mouse_move_y>;  //TODO: add mod morph for shift swap xy
+            sensor-bindings = <&mouse_move_x &mouse_move_y>;  // test this is test 
         };
 
         numpad_layer { //Layer 3 - NUM
