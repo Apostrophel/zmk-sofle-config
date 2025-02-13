@@ -174,7 +174,14 @@
         //     flavor = "tap-preferred";
         //     bindings = <&mo SYM>, <&spaceshift>;
         // };
-
+       
+        spacemod: spaceshift_and_layer_hold {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <200>;
+            bindings = <&mo>, <&spaceshift>;
+        };
  
 
         // lmt: left_hand_mod_tap {
@@ -311,12 +318,12 @@
         base_layer { //Layer 0  - BASE 
             bindings = <
 
-&kp ESC     &kp N1  &kp N2      &kp N3      &kp N4      &kp N5                                       &kp N6        &kp N7      &kp N8      &kp N9        &kp N0      &kp DEL
-&kp TAB     &kp Q   &kp W       &kp E       &kp R       &kp T                                        &kp Y         &kp U       &kp I       &kp O         &kp P       &kp GRAVE
-&sk LSHFT   &kp A   &hm LGUI S  &hm LALT D  &hm LCTRL F &kp G                                        &kp H         &hm LCTRL J &hm LALT K  &hm LGUI L    &kp COLON   &sk RSHFT
-&caps_word  &kp Z   &kp X       &kp C       &kp V       &kp B          &kp C_MUTE     &kp K_PP       &kp N         &kp M       &commasemi  &dotcolon     &minuscore  &caps_word
-                    &mo BLU     &mo MAC     &mo NUM     &lt SYM SPACE  &lt NAV ENTER  &lt NAV ENTER  &lt SYM BSPC  &mo NUM     &mo MAC     &mo BLU
-            >;                                                                                  
+&kp ESC     &kp N1  &kp N2      &kp N3      &kp N4      &kp N5                                            &kp N6        &kp N7      &kp N8      &kp N9        &kp N0      &kp DEL
+&kp TAB     &kp Q   &kp W       &kp E       &kp R       &kp T                                             &kp Y         &kp U       &kp I       &kp O         &kp P       &kp GRAVE
+&sk LSHFT   &kp A   &hm LGUI S  &hm LALT D  &hm LCTRL F &kp G                                             &kp H         &hm LCTRL J &hm LALT K  &hm LGUI L    &kp COLON   &sk RSHFT
+&caps_word  &kp Z   &kp X       &kp C       &kp V       &kp B               &kp C_MUTE     &kp K_PP       &kp N         &kp M       &commasemi  &dotcolon     &minuscore  &caps_word
+                    &mo BLU     &mo MAC     &mo NUM     &spacemod SYM SYM   &lt NAV ENTER  &lt NAV ENTER  &lt SYM BSPC  &mo NUM     &mo MAC     &mo BLU
+            >;                                          //&lt SUM SPACE                                        
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &mouse_scroll_x>;
         };                  
 
@@ -368,7 +375,7 @@
              sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &mouse_scroll_x>;
         };
 
-        gaming_layer_base { //Layer 5 - GAM         //TODO: fine tune - some clever macros for left TGB and bottom 678
+        gaming_layer_base { //Layer 5 - GAM         //TODO: fine tune - some clever macros for left TGB and bottom 
             bindings = <
 
 &kp ESC     &kp N1      &kp N2  &kp N3   &kp N4     &kp N5                              &kp N6    &kp N7  &kp N8     &kp N9    &kp N0     &to BASE
