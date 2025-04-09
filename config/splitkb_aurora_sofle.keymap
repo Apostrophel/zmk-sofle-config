@@ -190,13 +190,15 @@
         // mod morph for brackets 
         mod_morph_lpar_rpar: mod-morph-lpar {
             compatible = "zmk,behavior-mod-morph";
-            bindings = <&kp LPAR &kp RPAR>;
+            #binding-cells = <2>;
+            bindings = <&kp LPAR>, <&kp RPAR>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
         mod_morph_rpar_lpar: mod-morph-rpar {
             compatible = "zmk,behavior-mod-morph";
-            bindings = <&kp RPAR &kp LPAR>;
+            #binding-cells = <2>;
+            bindings = <&kp RPAR>, <&kp LPAR>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
         
