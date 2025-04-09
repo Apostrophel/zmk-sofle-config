@@ -187,7 +187,7 @@
             bindings = <&kp>, <&kp>;
         };
 
-        // mod morph for brackets 
+        // mod morph for brackets:
         mod_morph_lpar_rpar: mod-morph-lpar {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
@@ -196,9 +196,53 @@
         };
 
         mod_morph_rpar_lpar: mod-morph-rpar {
-            compatible = "zmk,behavior-mod-morph";
+            compatible = "zmk,behavior-mod-morph"; 
             #binding-cells = <0>;
             bindings = <&kp RPAR>, <&kp LPAR>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        // [ and ]
+        mod_morph_lbkt_rbkt: mod-morph-lbkt {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp LBKT>, <&kp RBKT>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        mod_morph_rbkt_lbkt: mod-morph-rbkt {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp RBKT>, <&kp LBKT>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        // { and }
+        mod_morph_lcbr_rcbr: mod-morph-lcbr {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp LCBR>, <&kp RCBR>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        mod_morph_rcbr_lcbr: mod-morph-rcbr {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp RCBR>, <&kp LCBR>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        // < and >
+        mod_morph_lt_gt: mod-morph-lt {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp LT>, <&kp GT>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        mod_morph_gt_lt: mod-morph-gt {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp GT>, <&kp LT>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
         
@@ -246,25 +290,38 @@
             timeout-ms = <50>;
             layers = <0 1>;
             key-positions = <38 40>; // xv
-            bindings = <&kp LEFT_BRACE>;
+            bindings = <&mod_morph_lcbr_rcbr>;
         };
         combo_curlybracket_close {
             timeout-ms = <50>;
             layers = <0 1>;
             key-positions = <45 47>; // m.
-            bindings = <&kp RIGHT_BRACE>;
+            bindings = <&mod_morph_rcbr_lcbr>;
         };
         combo_bracket_open {
             timeout-ms = <50>;
             layers = <0 1>;
             key-positions = <14 16>; // wr
-            bindings = <&kp LEFT_BRACKET>;
+            bindings = <&mod_morph_lbkt_rbkt>;
         };
         combo_bracket_close {
             timeout-ms = <50>;
             layers = <0 1>;
             key-positions = <19 21>; // uo
-            bindings = <&kp RIGHT_BRACKET>;
+            bindings = <&mod_morph_rbkt_lbkt>;
+        };
+
+        combo_alligator_open {
+            timeout-ms = <50>;
+            layers = <0 1>;
+            key-positions = <2 4>; // 24
+            bindings = <&mod_morph_lt_gt>;
+        };
+        combo_alligator_close {
+            timeout-ms = <50>;
+            layers = <0 1>;
+            key-positions = <7 9>; // 79
+            bindings = <&mod_morph_gt_lt>;
         };
         combo_return_to_base_layer { // Global scope combo on the left half to return to base layer
             timeout-ms = <50>;
