@@ -220,14 +220,14 @@
         mod_morph_lcbr_rcbr: mod-morph-lcbr {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp LCBR>, <&kp RCBR>;
+            bindings = <&kp LBKT>, <&kp RBRC>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
         mod_morph_rcbr_lcbr: mod-morph-rcbr {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp RCBR>, <&kp LCBR>;
+            bindings = <&kp RBRC>, <&kp LBKT>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
