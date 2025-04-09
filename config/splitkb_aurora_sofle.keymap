@@ -187,7 +187,18 @@
             bindings = <&kp>, <&kp>;
         };
 
+        // mod morph for brackets 
+        mod_morph_lpar_rpar: mod-morph {
+            compatible = "zmk,behavior-mod-morph";
+            bindings = <&kp LPAR &kp RPAR>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
 
+        mod_morph_rpar_lpar: mod-morph {
+            compatible = "zmk,behavior-mod-morph";
+            bindings = <&kp RPAR &kp LPAR>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
         
     };
 
@@ -209,13 +220,13 @@
             timeout-ms = <50>;
             layers = <0 1>;
             key-positions = <26 28>;
-            bindings = <&kp LPAR>;
+            bindings = <&mod_morph_lpar_rpar>;
         };
         combo_parantesis_close {
             timeout-ms = <50>;
             layers = <0 1>;
             key-positions = <31 33>;
-            bindings = <&kp RPAR>;
+            bindings = <&mod_morph_rpar_lpar>;
         };
         combo_forward_slash {
             timeout-ms = <50>;
