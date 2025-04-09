@@ -205,7 +205,7 @@
         mod_morph_lbkt_rbkt: mod-morph-lbkt {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp LBKT>, <&kp RBKT>;
+            bindings = <&kp LBKT>, <&kp RBKT>;  
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
@@ -220,14 +220,14 @@
         mod_morph_lcbr_rcbr: mod-morph-lcbr {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp LBKT>, <&kp RBRC>;
+            bindings = <&kp LBRC>, <&kp RBRC>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
         mod_morph_rcbr_lcbr: mod-morph-rcbr {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp RBRC>, <&kp LBKT>;
+            bindings = <&kp RBRC>, <&kp LBRC>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
