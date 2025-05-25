@@ -369,7 +369,7 @@
 &none      &kp DQT   &kp HASH       &kp LT          &kp GT          &kp PRCNT                       &kp CARET   &kp LBKT        &kp RBKT        &kp AMPS        &kp SQT   &none
 &none      &none     &hm LGUI EXCL  &hm LALT FSLH   &hm LCTRL BSLH  &kp EQUAL                       &kp PIPE    &hm LCTRL LPAR  &hm LALT RPAR   &hm LGUI QMARK  &kp COLON &none 
 &none      &none     &kp DOLLAR     &kp MINUS       &kp PLUS        &kp STAR   &none      &none     &kp TILDE   &kp LBRC        &kp RBRC        &kp AT          &kp SEMI  &none 
-                     &trans         &trans          &trans          &kp SPACE  &to 0      &kp RET   &kp BSPC    &trans          &trans          &trans
+                     &none          &none           &none           &kp SPACE  &to 0      &kp RET   &kp BSPC    &none           &none           &none 
             >;
             sensor-bindings = <&history_scroll &history_scroll>; 
         };      
@@ -378,12 +378,12 @@
             bindings = <
 
 &none      &none        &none            &none        &none             &none                         &none      &none     &none             &none       &none   &none 
-&none      &uncomment   &kp LS(LG(LEFT)) &kp LG(UP)   &kp LS(LG(RIGHT)) &none                         &kp PG_UP  &kp HOME  &kp UP            &kp END     &none   &none
-&kp LSHFT  &comment     &kp LG(LEFT)     &kp LG(DOWN) &kp LG(RIGHT)     &none                         &kp PG_DN  &kp LEFT  &kp DOWN          &kp RIGHT   &none   &none
-&kp LCTRL  &none        &kp LA(LEFT)     &kp LA(DOWN) &kp LA(RIGHT)     &none   &mkp RCLK  &mkp LCLK  &none      &none     &kp LC(LA(DOWN))  &none       &none   &none
-                        &trans           &trans       &trans            &trans  &to 0      &kp RET    &trans     &trans    &trans            &none
+&none      &none        &kp LS(LG(LEFT)) &kp LG(UP)   &kp LS(LG(RIGHT)) &none                         &kp PG_UP  &kp HOME  &kp UP            &kp END     &none   &none
+&none      &none        &kp LG(LEFT)     &kp LG(DOWN) &kp LG(RIGHT)     &none                         &kp PG_DN  &kp LEFT  &kp DOWN          &kp RIGHT   &none   &none
+&none      &kp LCTRL    &kp LA(LEFT)     &kp LA(DOWN) &kp LA(RIGHT)     &none   &mkp RCLK  &mkp LCLK  &none      &none     &kp LC(LA(DOWN))  &none       &none   &none
+                        &none            &none        &none             &none   &to 0      &kp RET    &none      &none     &none             &none
              >;
-            sensor-bindings = <&mouse_move_x &mouse_move_y>;  // test this is test 
+            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &mouse_scroll_x>;
         };
 
         numpad_layer { //Layer 3 - NUM
