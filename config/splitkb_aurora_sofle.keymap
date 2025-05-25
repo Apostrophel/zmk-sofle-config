@@ -365,11 +365,11 @@
         symbols_layer { //Layer 1 - SYM
             bindings = <
 
-&none      &none     &none          &none           &none           &none                           &none       &none           &none           &none           &none     &none 
-&none      &kp DQT   &kp HASH       &kp LT          &kp GT          &kp PRCNT                       &kp CARET   &kp LBKT        &kp RBKT        &kp AMPS        &kp SQT   &none
-&none      &none     &hm LGUI EXCL  &hm LALT FSLH   &hm LCTRL BSLH  &kp EQUAL                       &kp PIPE    &hm LCTRL LPAR  &hm LALT RPAR   &hm LGUI QMARK  &kp COLON &none 
-&none      &none     &kp DOLLAR     &kp MINUS       &kp PLUS        &kp STAR   &none      &none     &kp TILDE   &kp LBRC        &kp RBRC        &kp AT          &kp SEMI  &none 
-                     &none          &none           &none           &kp SPACE  &to 0      &kp RET   &kp BSPC    &none           &none           &none 
+&none      &none     &none          &none           &none           &none                           &none       &none      &none      &none       &none       &none 
+&none      &none     &none          &kp PIPE        &kp CARET       &kp LT                          &kp GT      &kp KP_N7  &kp KP_N8  &kp KP_N9   &none       &none
+&none      &kp HASH  &hm LGUI PRCNT &hm LALT MINUS  &hm LCTRL PLUS  &kp EQUAL                       &kp STAR    &kp KP_N4  &kp KP_N5  &kp KP_N6   &kp DOLLAR  &none
+&none      &none     &kp AMPS       &kp QMARK       &kp EXCL        &kp TILDE  &none      &none     &kp KP_N0   &kp KP_N1  &kp KP_N2  &kp KP_N3   &kp AT      &none
+                     &none          &none           &none           &kp SPACE  &to 0      &kp RET   &trans      &none      &none      &none
             >;
             sensor-bindings = <&history_scroll &history_scroll>; 
         };      
@@ -389,11 +389,11 @@
         numpad_layer { //Layer 3 - NUM
             bindings = <
 
-&to BASE    &none  &none            &mkp MCLK       &none           &none                        &kp KP_NLCK &kp DEL    &kp FSLH   &kp STAR    &kp MINUS   &none
-&none       &none  &mkp RCLK        &mmv MOVE_UP    &mkp LCLK       &none                        &kp PG_UP   &kp KP_N7  &kp KP_N8  &kp KP_N9   &kp PLUS    &none
-&none       &none  &mmv MOVE_LEFT   &mmv MOVE_DOWN  &mmv MOVE_RIGHT &none                        &kp PG_DN   &kp KP_N4  &kp KP_N5  &kp KP_N6   &kp RET     &none
-&none       &none  &none            &none           &none           &none    &none   &none       &kp KP_N0   &kp KP_N1  &kp KP_N2  &kp KP_N3   &none       &none
-                   &trans           &trans          &trans          &to 0    &trans  &trans      &trans      &none      &kp KP_DOT &none
+&none       &none  &none            &none           &none           &none                        &none       &none      &none      &none       &none    &none 
+&none       &none  &mkp RCLK        &mmv MOVE_UP    &mkp LCLK       &none                        &none       &kp F7     &kp F8     &kp F9      &kp F12  &none
+&none       &none  &mmv MOVE_LEFT   &mmv MOVE_DOWN  &mmv MOVE_RIGHT &none                        &none       &kp F4     &kp F5     &kp F6      &kp F11  &none
+&none       &none  &none            &none           &none           &none    &none   &none       &none       &kp F1     &kp F2     &kp F3      &kp F10  &none
+                   &trans           &trans          &trans          &to 0    &trans  &trans      &trans      &none      &none      &none
             >;
             sensor-bindings = <&inc_dec_kp C_BRI_UP C_BRI_DN &mouse_scroll_x>; 
         };
