@@ -18,6 +18,7 @@
 #define BASE 0
 #define SYM 1
 #define NAV 2
+#define FUN 3
 
 // Mouse and rotary redefinition:
 #define ZMK_POINTING_DEFAULT_MOVE_VAL 5000   // default: 600
@@ -357,7 +358,7 @@
 &none       &kp Q         &kp W       &kp E       &kp R       &kp T                                             &kp Y         &kp U       &kp I       &kp O         &kp P             &none 
 &none       &hm LSHFT A   &hm LGUI S  &hm LALT D  &hm LCTRL F &kp G                                             &kp H         &hm LCTRL J &hm LALT K  &hm LGUI L    &hm LSHFT COLON   &none
 &none       &kp Z         &kp X       &kp C       &kp V       &kp B               &none          &none          &kp N         &kp M       &commasemi  &dotcolon     &minuscore        &none
-                          &none       &none       &none       &spacemod SYM SYM   &lt NAV ENTER  &lt NAV ENTER  &lt SYM BSPC  &none       &none       &none  
+                          &none       &none       &none       &spacemod SYM SYM   &lt NAV TAB  &lt NAV ENTER  &lt SYM BSPC  &none       &none       &none  
             >;                                                                               
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &mouse_scroll_x>;
         };                  
@@ -377,16 +378,16 @@
         navigation_layer { //Layer 2 - NAV
             bindings = <
 
-&none      &none        &none            &none        &none             &none                         &none      &none     &none             &none       &none   &none 
-&none      &none        &kp LS(LG(LEFT)) &kp LG(UP)   &kp LS(LG(RIGHT)) &none                         &kp PG_UP  &kp HOME  &kp UP            &kp END     &none   &none
-&none      &none        &kp LG(LEFT)     &kp LG(DOWN) &kp LG(RIGHT)     &none                         &kp PG_DN  &kp LEFT  &kp DOWN          &kp RIGHT   &none   &none
-&none      &kp LCTRL    &kp LA(LEFT)     &kp LA(DOWN) &kp LA(RIGHT)     &none   &mkp RCLK  &mkp LCLK  &none      &none     &kp LC(LA(DOWN))  &none       &none   &none
-                        &none            &none        &none             &none   &to 0      &kp RET    &none      &none     &none             &none
+&none      &none        &none            &none        &none             &none                            &none      &none     &none             &none       &none   &none 
+&none      &none        &kp LS(LG(LEFT)) &kp LG(UP)   &kp LS(LG(RIGHT)) &none                            &kp HOME   &kp PG_DN &kp PG_UP         &kp END     &none   &none
+&none      &none        &kp LG(LEFT)     &kp LG(DOWN) &kp LG(RIGHT)     &none                            &kp LEFT   &kp DOWN  &kp UP            &kp RIGHT   &none   &none
+&none      &kp LCTRL    &kp LA(LEFT)     &kp LA(DOWN) &kp LA(RIGHT)     &kp PRCNT  &mkp RCLK  &mkp LCLK  &kp PRCNT  &none     &kp LC(LA(DOWN))  &none       &none   &none
+                        &none            &none        &none             &none      &to 0      &kp RET    &none      &none     &none             &none
              >;
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &mouse_scroll_x>;
         };
 
-        numpad_layer { //Layer 3 - NUM
+        function_layer { //Layer 3 - FUN
             bindings = <
 
 &none       &none  &none            &none           &none           &none                        &none       &none      &none      &none       &none    &none 
