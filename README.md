@@ -3,7 +3,18 @@ These are my personal keymaps for the Aurora Sofle split keyboard, a 4x6 key plu
 
 ## Standard layout
 
+### Abbreviations
+| Abbreviation | Meaning         |
+| ------------ | --------------- |
+| SPC          |  Space          |   
+| BSP          |  Back Space     |
+| psc          |  print screen   |
+| p.u          |  page up        |
+| p.d          |  page down      |
+| c.w          |  caps word      |
+| hom          |  home           | 
 
+ 
 #### Base layer (BASE)
     Tap:                                                        Hold: 
        
@@ -31,92 +42,28 @@ These are my personal keymaps for the Aurora Sofle split keyboard, a 4x6 key plu
 | `x + v`   | `{`    | `m + .`    | `}`    |
 | `w + r`   | `[`    | `u + o`    | `]`    |
 
+### Symbols layer
+//TODO: add these layers
 
-#### TODO: rest of the layers
+## Functions
 
-## Lindos: test layout for 3x6 
-This layout (on the 34-key-tesing branch) is intended for practicing on a smaller layout.
-It has only three layers, base, sym (symbols and numpad) and a function layers for F keys.  
-The layout used the GASC (GUI, ALT, Shift, Control) home row mod configuration and combos for brackets.
+### Spacemod, backspacemod
+The space and back space keys are modifed with a custom mod morph and hold tap combination. The result gives a key with three functions. 
+For the space key, one tap results in a space, holding the key results in activating the symbols layer, and shift-tapping space results in a backspace.
 
-### Abbreviations
-| Abbreviation | Meaning         |
-| ------------ | --------------- |
-| SPC          |  Space          |   
-| BSP          |  Back Space     |
-| psc          |  print screen   |
-| p.u          |  page up        |
-| p.d          |  page down      |
-| c.w          |  caps word      |
-| hom          |  home           | 
-
- 
-#### Base layer (BASE)
-    Tap:                                                        Hold: 
-       ┌───┬───┬───┬───┬───┐       ┌───┬───┬───┬───┬───┐           ┌───┬───┬───┬───┬───┐       ┌───┬───┬───┬───┬───┐
-       │ Q │ W │ E │ R │ T │       │ Y │ U │ I │ O │ P │           │   │   │   │   │   │       │   │   │   │   │   │
-       ├───┼───┼───┼───┼───┤       ├───┼───┼───┼───┼───┤           ├───┼───┼───┼───┼───┤       ├───┼───┼───┼───┼───┤
-       │ A │ S │ D │ F │ G │       │ H │ J │ K │ L │ : │           │GUI│ALT│SHF│CTR│   │       │   │CTR│SHF│ALT│GUI│
-       ├───┼───┼───┼───┼───┤       ├───┼───┼───┼───┼───┤           ├───┼───┼───┼───┼───┤       ├───┼───┼───┼───┼───┤
-       │ Z │ X │ C │ V │ B │       │ N │ M │ , │ . │ _ │           │   │   │   │   │   │       │   │   │   │   │   │
-       └───┴───┴───┴───┴───┘       └───┴───┴───┴───┴───┘           └───┴───┴───┴───┴───┘       └───┴───┴───┴───┴───┘
-                 ┌───┐                   ┌───┐                               ┌───┐                   ┌───┐
-                 │ESC├───┐           ┌───┤DEL│                               │   ├───┐           ┌───┤   │
-                 └───┤SPC├───┐   ┌───┤BSP├───┘                               └───┤SYM├───┐   ┌───┤SYM├───┘
-                     └───│TAB│   │RET├───┘                                       └───│NAV│   │NAV├───┘
-                         └───┘   └───┘                                               └───┘   └───┘
-
-##### Combo mappings for brackets
-| Left Hand | Symbol | Right Hand | Symbol |
-|-----------|--------|------------|--------|
-| `d + f`   | `"`    | `j + k`    | `'`    |
-| `s + f`   | `(`    | `j + l`    | `)`    |
-| `a + f`   | `/`    | `j + :`    | `\`    |
-| `x + v`   | `{`    | `m + .`    | `}`    |
-| `w + r`   | `[`    | `u + o`    | `]`    |
-
-#### Symbol numeric layer (SYM)
-    Tap:                                                        Hold:
-       ┌───┬───┬───┬───┬───┐       ┌───┬───┬───┬───┬───┐           ┌───┬───┬───┬───┬───┐       ┌───┬───┬───┬───┬───┐
-       │ESC│   │ | │ ^ │ < │       │ > │ 7 │ 8 │ 9 │ ` │           │   │   │   │   │   │       │   │   │   │   │   │
-       ├───┼───┼───┼───┼───┤       ├───┼───┼───┼───┼───┤           ├───┼───┼───┼───┼───┤       ├───┼───┼───┼───┼───┤
-       │ # │ % │ - │ + │ = │       │ 0 │ 4 │ 5 │ 6 │ $ │           │GUI│ALT│SHF│CTR│   │       │   │CTR│SHF│ALT│GUI│
-       ├───┼───┼───┼───┼───┤       ├───┼───┼───┼───┼───┤           ├───┼───┼───┼───┼───┤       ├───┼───┼───┼───┼───┤
-       │c.w│ & │ ? │ ! │ * │       │ ~ │ 1 │ 2 │ 3 │ @ │           │   │   │   │   │   │       │   │   │   │   │   │
-       └───┴───┴───┴───┴───┘       └───┴───┴───┴───┴───┘           └───┴───┴───┴───┴───┘       └───┴───┴───┴───┴───┘
-                 ┌───┐                   ┌───┐                               ┌───┐                   ┌───┐
-                 │ESC├───┐           ┌───┤DEL│                               │   ├───┐           ┌───┤   │
-                 └───┤SPC├───┐   ┌───┤BSP├───┘                               └───┤FUN├───┐   ┌───┤FUN├───┘
-                     └───│TAB│   │RET├───┘                                       └───│NAV│   │NAV├───┘
-                         └───┘   └───┘                                               └───┘   └───┘
-
-#### Navigation layer (NAV)
-    Tap:                                                       Hold:                                                                                                                                                         
-       ┌───┬───┬───┬───┬───┐       ┌───┬───┬───┬───┬───┐          ┌───┬───┬───┬───┬───┐       ┌───┬───┬───┬───┬───┐
-       │   │   │   │   │   │       │hom│p.u│p.d│end│   │          │   │   │   │   │   │       │   │   │   │   │   │
-       ├───┼───┼───┼───┼───┤       ├───┼───┼───┼───┼───┤          ├───┼───┼───┼───┼───┤       ├───┼───┼───┼───┼───┤
-       │   │   │   │   │   │       │ ← │ ↑ │ ↓ │ → │   │          │   │   │   │   │   │       │   │   │   │   │   │
-       ├───┼───┼───┼───┼───┤       ├───┼───┼───┼───┼───┤          ├───┼───┼───┼───┼───┤       ├───┼───┼───┼───┼───┤
-       │   │   │   │   │psc│       │psc│   │   │   │   │          │   │   │   │   │   │       │   │   │   │   │   │
-       └───┴───┴───┴───┴───┘       └───┴───┴───┴───┴───┘          └───┴───┴───┴───┴───┘       └───┴───┴───┴───┴───┘
-                 ┌───┐                   ┌───┐                              ┌───┐                   ┌───┐          
-                 │ESC├───┐           ┌───┤DEL│                              │   ├───┐           ┌───┤   │          
-                 └───┤SPC├───┐   ┌───┤BSP├───┘                              └───┤   ├───┐   ┌───┤   ├───┘          
-                     └───│TAB│   │RET├───┘                                      └───│   │   │   ├───┘              
-                         └───┘   └───┘                                              └───┘   └───┘                  
-
-#### Function layer (FUN)
-    Tap:                                                
-       ┌───┬───┬───┬───┬───┐       ┌───┬───┬───┬───┬───┐
-       │   │   │   │   │   │       │   │F7 │F8 │F9 │F10│
-       ├───┼───┼───┼───┼───┤       ├───┼───┼───┼───┼───┤
-       │   │   │   │   │   │       │   │F4 │F5 │F6 │F11│
-       ├───┼───┼───┼───┼───┤       ├───┼───┼───┼───┼───┤
-       │   │   │   │   │   │       │   │F1 │F2 │F3 │F12│
-       └───┴───┴───┴───┴───┘       └───┴───┴───┴───┴───┘
-                 ┌───┐                   ┌───┐          
-                 │ESC├───┐           ┌───┤DEL│          
-                 └───┤SPC├───┐   ┌───┤BSP├───┘          
-                     └───│TAB│   │RET├───┘              
-                         └───┘   └───┘                  
-
+```keymap 
+        //Super space key nested into spacemod below: tap - space, hold - momentary layer, shift+tap - backspace
+        spaceshift: shift_space_is_backspace { 
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp SPACE>, <&kp BACKSPACE>;          
+            mods = <(MOD_LSFT|MOD_RSFT)>;       
+        };
+        spacemod: spaceshift_and_layer_hold {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <200>;
+            bindings = <&mo>, <&spaceshift>;
+        };
+```
