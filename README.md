@@ -4,12 +4,42 @@ These are my personal keymaps for the Aurora Sofle split keyboard, a 4x6 key plu
 ## Standard layout
 
 
+#### Base layer (BASE)
+    Tap:                                                        Hold: 
+       
+       ┌───┬───┬───┬───┬───┬───┐       ┌───┬───┬───┬───┬───┬───┐                ┌───┬───┬───┬───┬───┬───┐       ┌───┬───┬───┬───┬───┬───┐
+       │ESC│ 1 │ 2 │ 3 │ 4 │ 5 │       │ 6 │ 7 │ 8 │ 9 │ 0 │DEL│                │ESC│ 1 │ 2 │ 3 │ 4 │ 5 │       │ 6 │ 7 │ 8 │ 9 │ 0 │DEL│
+       ├───┼───┼───┼───┼───┼───┤       ├───┼───┼───┼───┼───┼───┤                ├───┼───┼───┼───┼───┼───┤       ├───┼───┼───┼───┼───┼───┤
+       │TAB│ Q │ W │ E │ R │ T │       │ Y │ U │ I │ O │ P │ ` │                │TAB│ Q │ W │ E │ R │ T │       │ Y │ U │ I │ O │ P │ ` │
+       ├───┼───┼───┼───┼───┼───┤       ├───┼───┼───┼───┼───┼───┤                ├───┼───┼───┼───┼───┼───┤       ├───┼───┼───┼───┼───┼───┤
+       │SHF│ A │ S │ D │ F │ G │       │ H │ J │ K │ L │ : │SHF│                │SHF│ A │ S │ D │ F │ G │       │ H │ J │ K │ L │ : │SHF│
+       ├───┼───┼───┼───┼───┼───┤       ├───┼───┼───┼───┼───┼───┤                ├───┼───┼───┼───┼───┼───┤       ├───┼───┼───┼───┼───┼───┤
+       │c.w│ Z │ X │ C │ V │ B │       │ N │ M │ , │ . │ _ │c.w│                │c.w│ Z │ X │ C │ V │ B │       │ N │ M │ , │ . │ _ │c.w│
+       └───┴───┴───┴───┴───┴───┘       └───┴───┴───┴───┴───┴───┘                └───┴───┴───┴───┴───┴───┘       └───┴───┴───┴───┴───┴───┘
+             ┌───┬───┬───┐                   ┌───┬───┬───┐                            ┌───┬───┬───┐                   ┌───┬───┬───┐
+             │   │   │   ├───┐           ┌───┤   │   │   │                            │BLU│MAC│NUM├───┐           ┌───┤NUM│MAC│BLU│
+             └───┴───┴───┤SPC├───┐   ┌───┤BSP├───┴───┴───┘                            └───┴───┴───┤SYM├───┐   ┌───┤SYM├───┴───┴───┘
+                         └───│RET│   │RET├───┘                                                    └───│NAV│   │NAV├───┘            
+                             └───┘   └───┘                                                            └───┘   └───┘                
+                                                                         
+##### Combo mappings for brackets
+    | Left Hand | Symbol | Right Hand | Symbol |
+|-----------|--------|------------|--------|
+| `d + f`   | `"`    | `j + k`    | `'`    |
+| `s + f`   | `(`    | `j + l`    | `)`    |
+| `a + f`   | `/`    | `j + :`    | `\`    |
+| `x + v`   | `{`    | `m + .`    | `}`    |
+| `w + r`   | `[`    | `u + o`    | `]`    |
+
+
+#### TODO: rest of the layers
+
 ## Lindos: test layout for 3x6 
 This layout (on the 34-key-tesing branch) is intended for practicing on a smaller layout.
 It has only three layers, base, sym (symbols and numpad) and a function layers for F keys.  
 The layout used the GASC (GUI, ALT, Shift, Control) home row mod configuration and combos for brackets.
 
-### Keymap
+### Abbreviations
 SPC - Space
 BSP - Back Space
 psc - print screen
