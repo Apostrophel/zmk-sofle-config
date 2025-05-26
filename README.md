@@ -35,12 +35,13 @@ hom - home
                          └───┘   └───┘                                               └───┘   └───┘
 
 ##### Combo mappings for brackets
-d+f - "     j+k - '
-s+f - (     j+l - )
-a+f - /     j+: - \
-x+v - {     m+. - }
-w+r - [     u+o - ]
- 
+| Left Hand | Symbol | Right Hand | Symbol |
+|-----------|--------|------------|--------|
+| `d + f`   | `"`    | `j + k`    | `'`    |
+| `s + f`   | `(`    | `j + l`    | `)`    |
+| `a + f`   | `/`    | `j + :`    | `\`    |
+| `x + v`   | `{`    | `m + .`    | `}`    |
+| `w + r`   | `[`    | `u + o`    | `]`    |
 
 #### Symbol numeric layer (SYM)
     Tap:                                                        Hold:
