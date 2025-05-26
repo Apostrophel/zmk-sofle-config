@@ -23,7 +23,7 @@ These are my personal keymaps for the Aurora Sofle split keyboard, a 4x6 key plu
                              └───┘   └───┘                                                            └───┘   └───┘                
                                                                          
 ##### Combo mappings for brackets
-    | Left Hand | Symbol | Right Hand | Symbol |
+| Left Hand | Symbol | Right Hand | Symbol |
 |-----------|--------|------------|--------|
 | `d + f`   | `"`    | `j + k`    | `'`    |
 | `s + f`   | `(`    | `j + l`    | `)`    |
@@ -40,13 +40,15 @@ It has only three layers, base, sym (symbols and numpad) and a function layers f
 The layout used the GASC (GUI, ALT, Shift, Control) home row mod configuration and combos for brackets.
 
 ### Abbreviations
-SPC - Space
-BSP - Back Space
-psc - print screen
-p.u - page up
-p.d - page down
-c.w - caps word
-hom - home 
+| Abbreviation | Meaning         |
+| ------------ | --------------- |
+| SPC          |  Space          |   
+| BSP          |  Back Space     |
+| psc          |  print screen   |
+| p.u          |  page up        |
+| p.d          |  page down      |
+| c.w          |  caps word      |
+| hom          |  home           | 
 
  
 #### Base layer (BASE)
