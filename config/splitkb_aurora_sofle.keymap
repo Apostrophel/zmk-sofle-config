@@ -373,9 +373,9 @@
             bindings = <
 
 &none  &none          &none          &none            &none           &none                                 &none        &none            &none             &none           &none            &none 
-&none  &kp ESC        &none          &kp PIPE         &kp CARET       &kp LT                                &kp GT       &kp KP_N7        &kp KP_N8         &kp KP_N9       &kp GRAVE        &none
+&none  &kp TILDE      &kp AT         &kp PIPE         &kp CARET       &kp LT                                &kp GT       &kp KP_N7        &kp KP_N8         &kp KP_N9       &kp GRAVE        &none
 &none  &hm LGUI HASH  &hm LALT PRCNT &hm LSHFT MINUS  &hm LCTRL PLUS  &kp EQUAL                             &kp KP_N0    &hm RCTRL KP_N4  &hm RSHIFT KP_N5  &hm RALT KP_N6  &hm RGUI DOLLAR  &none
-&none  &caps_word     &kp AMPS       &kp QMARK        &kp EXCL        &kp STAR           &none    &none     &kp TILDE    &kp KP_N1        &kp KP_N2         &kp KP_N3       &kp AT           &none
+&none  &caps_word     &kp AMPS       &kp QMARK        &kp EXCL        &kp STAR           &none    &none     &kp COMMA    &kp KP_N1        &kp KP_N2         &kp KP_N3       &kp DOT           &none
                       &none          &none            &lt FUN ESC     &spacemod FUN FUN  &kp TAB  &kp RET   &kp BSPC     &lt FUN DEL      &none             &none
             >;
             sensor-bindings = <&history_scroll &history_scroll>; 
