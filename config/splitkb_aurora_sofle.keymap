@@ -391,7 +391,7 @@
 &none       &kp Q         &kp W       &kp E        &kp R       &kp T                                             &kp Y                   &kp U       &kp I         &kp O         &kp P               &none 
 &none       &hm LGUI A    &hm LALT S  &hm LSHFT D  &hm LCTRL F &kp G                                             &kp H                   &hm RCTRL J &hm RSHIFT K  &hm RALT L    &colonsemi          &none
 &none       &kp Z         &kp X       &kp C        &kp V       &kp B               &none          &none          &kp N                   &kp M       &commasemi    &dotcolon     &minuscore          &none
-                          &none       &none        &kp ESC     &spacemod SYM SYM   &lt NAV TAB    &lt NAV ENTER  &backspacemod SYM SYM   &kp DEL     &none         &none  
+                          &none       &none        &kp ESC     &spacemod SYM SYM   &lt NAV TAB    &lt NAV ENTER  &lt SYM BACKSPACE       &kp DEL     &none         &none  
             >;                                                                               
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &mouse_scroll_x>;
         };                  
