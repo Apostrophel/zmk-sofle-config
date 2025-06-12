@@ -153,8 +153,14 @@
             #binding-cells = <0>;
             bindings = <&kp COLON>, <&kp SEMICOLON>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
-        }
-
+        };
+        /* hm_cosem: gui_colon_semi_shift { */
+        /*     compatible = "zmk,behavior-hold-tap"; */
+        /*     #binding-cells = <2>; */
+        /*     flavor = "hold-preferred"; */
+        /*     tapping-term-ms = <200>; */
+        /*     bindings = <&mo>, <&colonsemi>; */
+        /* }; */
         //Super space key nested into spacemod below: tap - space, hold - momentary layer, shift+tap - backspace, gui+alt+tap - delete
         spacectrl: delete_ctrl_shift_space {
             compatible = "zmk,behavior-mod-morph";
@@ -171,12 +177,21 @@
         };
 
 
-        backspacemod: shift_backspace_is_ctrl_backspace {
+        backspace_shift: shift_backspace_is_ctrl_backspace {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp BACKSPACE>, <&kp LS(BACKSPACE)>;          
             mods = <(MOD_LSFT|MOD_RSFT)>;       
-        }
+        };
+
+        backspacemod: sym_hold_shift_backspace {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <200>;
+            bindings = <&mo>, <&backspace_shift>;
+        };
+        
         spacemod: spaceshift_and_layer_hold {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
@@ -374,9 +389,9 @@
 
 &none       &none         &none       &none        &none       &none                                             &none                   &none       &none         &none         &none               &none 
 &none       &kp Q         &kp W       &kp E        &kp R       &kp T                                             &kp Y                   &kp U       &kp I         &kp O         &kp P               &none 
-&none       &hm LGUI A    &hm LALT S  &hm LSHFT D  &hm LCTRL F &kp G                                             &kp H                   &hm RCTRL J &hm RSHIFT K  &hm RALT L    &hm RGUI colonsemi  &none
+&none       &hm LGUI A    &hm LALT S  &hm LSHFT D  &hm LCTRL F &kp G                                             &kp H                   &hm RCTRL J &hm RSHIFT K  &hm RALT L    &colonsemi          &none
 &none       &kp Z         &kp X       &kp C        &kp V       &kp B               &none          &none          &kp N                   &kp M       &commasemi    &dotcolon     &minuscore          &none
-                          &none       &none        &kp ESC     &spacemod SYM SYM   &lt NAV TAB    &lt NAV ENTER  &lt SYM backspacemod    &kp DEL     &none         &none  
+                          &none       &none        &kp ESC     &spacemod SYM SYM   &lt NAV TAB    &lt NAV ENTER  &backspacemod SYM SYM   &kp DEL     &none         &none  
             >;                                                                               
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &mouse_scroll_x>;
         };                  
