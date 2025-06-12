@@ -180,7 +180,7 @@
         backspace_shift: shift_backspace_is_ctrl_backspace {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp BACKSPACE>, <&kp LS(BACKSPACE)>;          
+            bindings = <&kp BACKSPACE>, <&kp LC(BACKSPACE)>;          
             mods = <(MOD_LSFT|MOD_RSFT)>;       
         };
 
